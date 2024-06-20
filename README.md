@@ -10,7 +10,9 @@ Esse projeto é o desenvolvimento de um Front-End  com React e consumo da Api ex
 https://cdn-dev.preoday.com/challenge/menu
 ## Imagem do Projeto
 <!-- ![cardapio](/cardapio.gif) -->
-![cardapio](/cardapio.png)
+![cardapio](https://github.com/JacquelineCasali/BURGERS-RESTAURANT---REACT/assets/103325619/bcba4444-ba52-4971-8600-db02b412b8c1)
+
+
 ## Repositorio do Projeto para clonar
 git clone git  https://github.com/JacquelineCasali/BURGERS-RESTAURANT---REACT.git
 
