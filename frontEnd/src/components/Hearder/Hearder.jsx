@@ -11,27 +11,28 @@ function Hearder() {
       setMenu(!menu);
     };
   return (
+    
     <header className={styles.header}>
-        <span>Cardápio</span>
-      
-
       <nav className={`${styles.menuSandwich} ${menu ? styles.show : ""} `} onClick={click} >
-        <Link  className={styles.a} to="/">Home</Link>
+        <Link  className={styles.a} to="/">MENU</Link>
 
-          <Link className={styles.a} to={`/cadastro`}>
-          Cadastrar</Link>
-      
+          <Link className={styles.a} to={`/entrada`}>
+          ENTRADA</Link>
+          <Link className={styles.a} to={`/contato`}>
+          CONTADO</Link>
       </nav>
 
      {/* botao responsivo */}
    
      <div className={styles.hamburger} onClick={click}>
      
-     <FaBars size={20} style={{ color: "black"}} />
+     <FaBars size={20} style={{ color: "#ffffff"}} />
    
    </div>
 
     </header>
+
+    
   );
 }
 

@@ -10,6 +10,7 @@ import Error from "../page/Error/Error";
 import Ler from "../page/Ler";
 import Editar from "../components/Editar/Editar";
 
+
 const AppRoutes = () => {
   return (
     <Router>
@@ -20,6 +21,7 @@ const AppRoutes = () => {
        <Route exact path="/:id" element={<Ler />} />
        <Route exact path="/cadastro" element={<Cadastro />} />
        <Route exact path="/edit/:id" element={<Editar />} />
+
    
      <Route path="*" element={<Error />} />
     </Routes>

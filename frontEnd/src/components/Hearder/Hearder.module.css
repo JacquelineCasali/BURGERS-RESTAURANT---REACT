@@ -1,10 +1,10 @@
 .header{
-    background-color: gainsboro;
-border-bottom: 2px solid #f44336;
+    background-color: var(--primaryColour);
+border-bottom: 2px solid var(--primaryColour);
 position: fixed;
 top: 0;
 width: 100%;
-height: 68px;
+height: 52px;
 display: flex;
 align-items: center;
 justify-content: space-around;
@@ -12,24 +12,16 @@ justify-content: space-around;
 z-index: 9999;
 }
 
-.header span{
-    font-size: 2rem;
-    color: #b71c1c;
-    font-weight: bold;
- 
-
-}
-
-
   
   .a:hover {
-    border-bottom: 2px solid #f44336;
+    border-bottom: 2px solid var(--backgroundColour) ;
   }
 
 .header .a{
-    color: black;
-    padding-inline: 0.5rem;
-    font-size: 22px;
+    color:var(--backgroundColour);
+    padding-inline: 3rem;
+    font-size: 20px;
+    font-weight: 400;
     text-decoration: none;
     /* color: unset */
 }
@@ -43,13 +35,7 @@ z-index: 9999;
 }
 /* responsividade */
 @media (max-width: 480px) {
-    .header span {
-        font-size: 22px;
- margin-left: 20px;
- margin-top: 10px;
- margin-bottom: 10px;
- text-align: center;
-    }
+
     .header a {
         font-size: 0.95rem;
         padding-inline: 0.5rem;
@@ -63,13 +49,7 @@ z-index: 9999;
 }
 
 @media (max-width: 380px) {
-    .header span {
-        font-size: 20px;
- margin-left: 20px;
- margin-top: 10px;
- margin-bottom: 10px;
- text-align: center;
-    }
+ 
     .header a {
         font-size: 0.75rem;
     }
@@ -78,14 +58,7 @@ z-index: 9999;
     .header {
         justify-content: space-around;
       }
-      .header span {
-        font-size: 24px;
- margin-left: 20px;
- margin-top: 10px;
- margin-bottom: 10px;
- text-align: center;
-
-    }
+  
     .header a{
       
         color: #b71c1c;

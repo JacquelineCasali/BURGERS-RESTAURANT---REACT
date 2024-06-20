@@ -1,0 +1,113 @@
+[
+    {
+      "title": "Busca Cep",
+      "description": "Buscar cep auto preenche o endereço ",
+      "image": "https://i.ibb.co/094dsn9/Video-cep.gif[/img][/url] ",
+      "link": "https://busca-endereco-pelo-cep.vercel.app/",
+      "git": "https://github.com/JacquelineCasali/busca-endereco-pelo-cep",
+      "icon": "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg", 
+   "javascript":"https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" 
+   
+    },
+
+    {
+      "title": "X-men",
+       "description": "Descrição do projeto 4",
+      "image": "https://i.ibb.co/vwGbHrH/imagem-projeto.png[/img][/url]",
+      "link": "https://x-men-two.vercel.app/",
+      "git": "https://github.com/JacquelineCasali/X-men"
+    },
+    {
+      "title": "Cripto Moedas",
+       "description": "Descrição do projeto 3",
+      "image": "https://i.ibb.co/PWKF6Cr/2023-08-01-144058.png[/img]",
+
+      "link": "https://site-criptonoedas.vercel.app/",
+      "git": "https://github.com/JacquelineCasali/Site-Criptonoedas"
+    },
+    {
+      "title": "Conversor de Moedas ",
+      "description": "Descrição do projeto 5",
+      "image": "https://i.ibb.co/wNGL0tY/2023-09-06-133944.png[/img][/url]",
+      "link": "https://conversor-de-moedas-phi.vercel.app/",
+      "git": "https://github.com/JacquelineCasali/Conversor-de-Moedas"
+    },
+    {
+      "title": "CRUD de Pet desenvolvido",
+      "description": "Buscar cep auto preenche o endereço",
+      "image": "https://i.ibb.co/Wv50XC1/Video-2023-06-15-210440.gif[/img][/url]",
+      "link": "https://front-back-petshop.vercel.app/",
+      "git": "https://github.com/JacquelineCasali/Front--Back--Petshop"
+    },
+
+    {
+      "title": "CRUD de Lista de Estudante",
+      "description": "Criar , Editar, ler e Deletar Cadastro",
+      "image": "https://i.ibb.co/YdGjJ6F/Video-crud-de-estudante.gif[/img][/url]",
+      "link": "https://lista-de-estudante-react-php.vercel.app/",
+      "git": "https://github.com/JacquelineCasali/lista-de-estudante-front-back"
+    },
+    {
+      "title": "Upload de Imagem ",
+      "description": "Upload de Imagem ",
+      "image": "https://i.ibb.co/tYDMJb4/upload.gif",
+      "link": "https://upload-de-imagem-com-react-node-mysql.vercel.app/",
+      "git":"https://github.com/JacquelineCasali/upload-de-imagem-com-react-node-mysql"
+    },
+    {
+      "title": "Sitema de Hotel desenvolvido em Java",
+      "description": "Bate papo",
+      "image": "https://i.ibb.co/mNN2hn5/Video-hotel.gif[/img][/url]",
+      "link": "https://github.com/JacquelineCasali/One-Alura-Hotel",
+      "git": "https://github.com/JacquelineCasali/One-Alura-Hotel"
+    },
+
+    {
+      "title": "Api-Sistema-Medico desenvolvido em Java",
+      "description": "Bate papo",
+      "image": "https://i.ibb.co/P9qJygK/Video-2023-10-04-064647.gif",
+      "link": "https://github.com/JacquelineCasali/Api-Sistema-Medico-Java",
+      "git": "https://github.com/JacquelineCasali/Api-Sistema-Medico-Java"
+    },
+    {
+      "title": "Api-Forum com login desenvolvido em Java",
+      "description": "Bate papo",
+      "image": "https://i.ibb.co/kDqHq4D/Video-forum.gif[/img][/url]",
+
+      "link": "https://github.com/JacquelineCasali/One-Alura-Forum.git",
+      "git": "https://github.com/JacquelineCasali/One-Alura-Forum.git"
+    },
+
+    {
+      "title": "Api-Parcelamento desenvolvido em Java",
+      "description": "",
+      "image": "https://i.ibb.co/RyFcttT/2024-03-25-122801.png",
+
+      "link": "https://github.com/JacquelineCasali/Api-Pagamento-Java",
+      "git": "https://github.com/JacquelineCasali/Api-Pagamento-Java"
+
+    },
+
+     {
+      "title": "Api-Cardápio desenvolvido em Java",
+      "description": "",
+      "image": "https://i.ibb.co/JCDsCMj/Video-2024-03-19-143950.gif",
+
+      "link": "https://github.com/JacquelineCasali/back-end-cardapio-java",
+      "git": "https://github.com/JacquelineCasali/back-end-cardapio-java"
+
+    },
+    {
+      "title": "Sistema de login com autenticação JWT",
+      "description": "",
+      "image": "https://i.ibb.co/8c7njSZ/Video-login.gif",
+      "link": "https://api-login-node-express-mysql.vercel.app/login",
+      "git": "https://github.com/JacquelineCasali/Api-Login-Node-express-Mysql.git"
+
+    }
+
+
+    
+     ]
+
+    

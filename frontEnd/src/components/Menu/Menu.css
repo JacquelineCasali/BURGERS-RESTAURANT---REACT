@@ -1,0 +1,47 @@
+.menu-pedido{
+  display: inline-flex;
+  width: 600px;
+  height: 150px;
+  padding: 20px 0px 24px 16px;
+  gap:12px;
+  
+}
+
+
+.menus{
+ padding-top: 10px;
+  width: 124px;
+  height: 146px;
+  margin-left: 19px;
+cursor: pointer;
+}
+.menus:hover{
+  box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+}
+.menu-image{
+  border-radius: 190%;
+  width: 94px;
+  height:  80px;
+  /* 
+  height: 94px; */
+   border: 2px solid #464646;
+padding: 4px;
+
+
+/* object-fit: cover; */
+
+}
+
+.text{
+ padding: 16px 0px 8px 0px; 
+
+color: #121212;
+ font-size: 16px;
+font-weight: 600;
+letter-spacing: 0.5px;
+align-items: center;
+}
+.text:hover {
+
+  border-bottom: 2px solid var(--primaryColour) ;
+}

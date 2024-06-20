@@ -1,7 +1,6 @@
 import "./Ler.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
 import BotaoVoltar from "../Voltar/BotaoVoltar";
 import { Link, useParams } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons";

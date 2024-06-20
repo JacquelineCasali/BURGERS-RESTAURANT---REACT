@@ -1,100 +1,182 @@
-.container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-  
-    
-}
-
 .titulo{
     display: inline-block;
+    width: 100%;
   }
   .h2{
     margin:   0 0  5px 0;
    
   }
-
-  .pesquisa{
-    /* width: 90%; */
-    padding: 10px 25px;
-    border: 1px solid #333;
-    border-radius: 10px;
-    font-size: 20px;
-    margin:  20px 0 ;
-    float: none;
-  
-  }
-  
   .lupa{
    
     /* float:right; */
     margin:0px 0px 0px -40px;
     cursor:pointer;
     display: inline;
+    color: #8A94A4;
   
   }
+  .pesquisa{
+    width: 1024px;
+    padding: 10px 25px;
+    border: 1px solid #8A94A4;
+    border-radius: 8px;
+    font-size: 20px;
+    margin:  10px 0 ;
+    float: none;
+  gap: 4px;
+  }
+  
+.menu{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 3rem 1rem;
+  background-color: #F8F9FA;
+  width: 1024px;
+  gap: 24px;
+  Height: 1337px;
+}
+.left{
+  background-color: var(--backgroundColour);
+  width: 600px;
+ height:1071px ;
+padding: 0px 0px 24px 0px;
+box-shadow: rgba(0, 0, 0, 0.14) 0px 7px 29px 0px;
 
+overflow-y: overlay;
+overflow-x: auto;
+}
+/* barra de rolagem */
+.left::-webkit-scrollbar {
+  width: 12px;                /* largura da barra de rolagem */
+
+}
+
+.left::-webkit-scrollbar-track {
+  background:var(--primaryColour);           /* cor de fundo da barra de rolagem */
+}
+
+.left::-webkit-scrollbar-thumb {
+  background-color: var(--backgroundColour);  /* cor do scroll (thumb) da barra de rolagem */
+  border-radius: 20px;        /* arredondar o scroll (thumb) */
+  border: 2px solid var(--primaryColour);     /* criar um espaco em volta do scroll */
+}
+
+
+.right{
+  background-color: var(--backgroundColour);
+  width: 320px;
+ max-height:129px ;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 7px 29px 0px;
+gap: 1px;
+border-radius: 5px 5px 0 0 ;
+}
+.carrinho{
+  background-color: var(--backgrouncarrinho);
+  width: 320px;
+ height:64px ;
+padding: 16px 24px 16px 24px;
+border-radius: 5px 5px 0 0 ;
+display: flex;
+gap: 24px;
+}
+
+
+
+.item{
+  background-color: var(--backgroundColour);
+  width: 320px;
+ height:64px ;
+padding:  24px;
+display: flex;
+}
+.item-Rg{
+  font-size: 16px;
+ 
+line-height: 19px;
+color:#464646 ;
+font-weight: 400;
+height: 16px;
+
+
+}
   a:link {
     text-decoration: none;
     color: unset
   }
-
+  .menu-sections{
+display: flex;
+justify-content: space-between;
+padding: 20px 16px 12px 16px;
+  }
  
-.card-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 20px;
+
+.menu-item,.menu-item-drink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    height: 117px;
 }
-.card {
+
+
+.menu-item:hover, .menu-item-drink:hover{
+  box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+}
+.menu-item-drink {
+
+  height: 77px;
+}
+
+
+.menu-item-left{
+  width: 424px;
+  
+    
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-    border-radius: 8px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 0;
+    align-items: flex-start;
 }
-
-.card img {
-    border-radius: 8px 8px 0 0;
-    width: 250px;
-    height: 200px;
+p,b{
+  font-weight: 300;
+  color: var(--primaryColour);
+font-size: 16px;
+line-height: 19px;
+margin: 3px 0;
+font-family: "Roboto";
+text-align: justify;
+width: 410px;
 }
-
-
-.teste{
-
-    padding: 0 0   10px 0  ;
-
+b{
+ font-weight: bold; 
+ gap: 8px;
 }
-.button {
+.menu-item  img {
+  border-radius:4px ;
+  width: 128px;
+  height: 85px;
+}
+/* .button {
     background-color: #0275d8;
     color: white;
     font-weight: bold;
-    /* position: fixed; */
     bottom: 100px;
-    /* right: 24px; */
     transition: all 0.1s linear 0.1s;
     width: 20%;
     padding: 7px;
     border-radius: 20px;
   font-size: 18px;
-  /* display: flex; */
+ 
   margin-left: 600px;
 }
   
 .button:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
     transform: scale(1.1);
-}
+} */
 
-.icone {
- 
-  margin: 0 0 10px 10px;
-}
+
 
 
