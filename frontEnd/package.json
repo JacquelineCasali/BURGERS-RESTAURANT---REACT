@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "private": true,
-
+  "proxy": "https://cdn-dev.preoday.com/challenge/menu",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

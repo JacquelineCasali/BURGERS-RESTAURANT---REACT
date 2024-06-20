@@ -1,37 +1,21 @@
 import "./Card.css";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+
+import React from "react";
 import { Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { FiChevronUp } from "react-icons/fi";
 import Menu from "../Menu/Menu";
 import Drink from "./Drink";
 import Dessert from "./Dessert";
-
+import FETEST from "../../json/FETEST.json"
 export default function Card() {
-  const [data, setData] = useState(null);
-  const url = "https://cdn-dev.preoday.com/challenge/menu";
-  // rota de leitura
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setData(response.data);
-        //console.log(data)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-  if (!data) return null;
-
   // const [busca, setBusca] = useState("");
   // //corventendo para miniscula
   // const searchLowerCase = busca.toLowerCase();
   // console.log(busca);
-  // const nome = data.filter(
+  // FETEST.filter(
   //   (cliente) =>
-  //     cliente.title.toLowerCase().includes(searchLowerCase)
+  //     cliente.name.toLowerCase().includes(searchLowerCase)
   //     // ||
   //     // cliente.email.toLowerCase().includes(searchLowerCase)
 
@@ -58,11 +42,11 @@ export default function Card() {
         <div className="left">
           <Menu />
           <div className="menu-sections">
-            <h1>{data.sections[0].name}</h1>
+            <h1>{FETEST.sections[0].name}</h1>
             <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
           </div>
 
-          {data.sections[0].items.map((footdata, index) => (
+          {FETEST.sections[0].items.map((footdata, index) => (
             <Link to={`/${footdata.id}`} key={index}>
               <div className="menu-item">
                 <div className="menu-item-left">
