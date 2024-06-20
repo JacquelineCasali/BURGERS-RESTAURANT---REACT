@@ -1,19 +1,19 @@
 ## Projeto desenvolvido com 
-React Java e Mysql
+React consumindo Api externa
 Cardápio .
 
-O aplicativo ou sistema web deve possuir funcionalidades que permitam o cadastro, editar , ler os itens no cardápio.
+O aplicativo ou sistema web deve possuir funcionalidades que permitam fazer pedido no cardápio.
 
-Esse projeto é o desenvolvimento de um FullStack com React e Java.
+Esse projeto é o desenvolvimento de um Front-End  com React e consumo da Api externa .
 
+## Api do Projeto
+https://cdn-dev.preoday.com/challenge/menu
 ## Imagem do Projeto
-![cardapio](/cardapio.gif)
+<!-- ![cardapio](/cardapio.gif) -->
 
-## Repositorio do Projeto
-git clone https://github.com/JacquelineCasali/cardapio-react-java.git
+## Repositorio do Projeto para clonar
+git clone git  https://github.com/JacquelineCasali/BURGERS-RESTAURANT---REACT.git
 
-## Para clonar o projeto
-https://github.com/JacquelineCasali/cardapio-react-java.git
 
 Seleciona o botão code vai na opção Download ZIP
 
@@ -25,26 +25,12 @@ $ npm run dev
 
 ## ⚙️ Funcionalidades
 
-- [x] CRUD de comida;
+- [x] Fazer pedido
 
 ## 🛠 Tecnologias utilizadas
 
-- **[Java 17]**
-- **[Spring Boot 3]**
-- **[Maven]**
-- **[MySQL]**
-- **[Lombok]**
-- **[MySql]**
-- **[Xampp]**
-
-## Para Clonar o projeto na parte de Back-end
-https://github.com/JacquelineCasali/back-end-cardapio-java.git
-
-
-# 📁 Acessar a aplicação do Back-end
-
-##### Enquanto o servidor está ligado, acesse o navegador e entre no endereço abaixo
-http://localhost:8080/swagger-ui/index.html
+- **[Rect]**
+- **[Vite]**
 
 
 ## 📝 Licença
