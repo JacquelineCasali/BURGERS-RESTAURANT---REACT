@@ -28,7 +28,7 @@ export default function Card() {
   // );
 
   return (
-    <section >
+    <section className="container">
       <div className="titulo">
         {/* filtro */}
 
