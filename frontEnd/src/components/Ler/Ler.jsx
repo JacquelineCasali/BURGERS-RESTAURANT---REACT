@@ -3,80 +3,124 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import BotaoVoltar from "../Voltar/BotaoVoltar";
 import { Link, useParams } from "react-router-dom";
-import * as Icon from "react-bootstrap-icons";
+import icone from "../../assets/x.png";
+import FETEST from '../../json/FETEST.json'
+import { FiMinus, FiMinusCircle, FiPlus, FiPlusCircle } from "react-icons/fi";
+import { Border } from "react-bootstrap-icons";
 export default function LerCard() {
 
-  const { id } = useParams();
-  const [data, setData] = useState([]);
-  useEffect(() => {
-   
-    axios
-      .get("http://localhost:8080/food/"+id)
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-  console.log(data);
 
+//  quantidade 
+const [quantidade, setQuantidade] = useState(1);
+// adicionando item ao carrinho
+// const { adicionarProdutoCarrinho } = useContext(CarrinhoContext);
+ 
+// quantidade
+const handleDecreaseQuantityClick = () => {
+  setQuantidade((prev) => (prev === 1 ? prev : prev - 1));
+};
+
+const handleIncreaseQuantityClick = () => {
+  setQuantidade((prev) => prev + 1);
+};
+
+const handleAddToCartClick = () => {
+  adicionarProdutoCarrinho({ ...product, quantidade });
+};
 
 
   return (
-    <div className="container">
-      <div className="tituloler">
+    
+    
+    
+    <section className="imagem-fundo"  >
+   <div className="pedido">
+    <div className="detalhe-image">
+     
+    <Link className="icone-x" to={"/"}>
+            <img className="x" src={icone} alt="Logo" />
+          </Link>
+  
+  
+           
+           
+           
+    
+   
+ 
+      <img className="image-1"
+      src={FETEST.sections[0].items[1].images[0].image}
+       alt="" /> 
+       
+       </div>
 
-   <h2 className="h2">Detalhe Cardápio</h2>
-      </div>
+
+
+<div className="pedido-detalhe">   
 
   
-      <div className="card-ler">
-    
-          <div className="card">
-          
-          
-            <img src={data.image} />
-            <h2>{data.title}</h2>
-           
-            <p>
-    <b>Preço:</b> R$:{data.price}
-                  </p> 
-        
+<h1>{FETEST.sections[0].items[1].name}</h1>
+  
 
-          <div className="iconetable">
+ <p className="description">{FETEST.sections[0].items[1].description}</p>
 
+  <div className="opcao">
+  <h2>{FETEST.sections[0].items[1].modifiers[0].name}</h2>
+  <p>Select 1 option</p>
+  {/* <p>{FETEST.sections[0].items[0].modifiers.name}</p> */}
+ 
+  </div>
+ 
+  {FETEST.sections[0].items[1].modifiers[0].items.map((detalhe, index) => (
+   <div className="opcao-items" >
+   <div className="opcao-items-left" >
 
-
-<Link to={`/edit/${data.id}`}>
-                    <Icon.Pencil
-                      color="black"
-                      size={30}
-                      cursor="pointer"
-                      className="icone"
-                    />
-                  </Link>
-<Link onClick={() => handleDelete(data.id)}>
-                    <Icon.Trash3
-                      color="black"
-                      size={30}
-                      cursor="pointer"
-                      
-                      className="icone"
-                    />
-                  </Link>
+  <b>{detalhe.name}</b>
+  <p>R$:{detalhe.price.toFixed(2)}</p>
 
 
 
 </div>
+<input type="radio" />
+   </div>
+ 
+
+  ))}
+            
+                
+
+
+
+
+ 
+<div className="quantidade">
+
+<FiMinus className="FiMinus" size={36}
+onClick={handleDecreaseQuantityClick}
+variant="outline"
+/>
+{/* <h1 >1</h1> */}
+<h1>{quantidade}</h1>
+<FiPlus className="FiPlus" size={36}
+onClick={handleIncreaseQuantityClick}
+variant="outline"
+/>
+
 </div>
 
-      </div>
 
 
+<button className="btn-adicionar"
+  onClick={handleAddToCartClick}
+>Add to Order . </button>
 
+{/* <b>R$:{FETEST.sections[0].items[0].price.toFixed(2)}</b> */}
+</div>
 
-      <div className="link">
-    
-      <BotaoVoltar/>
-      </div>
+ 
+</div>
+</section>
 
-    </div>
+  
   );
 }

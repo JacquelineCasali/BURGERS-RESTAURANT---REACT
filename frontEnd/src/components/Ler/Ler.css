@@ -1,78 +1,146 @@
-.container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
+.imagem-fundo {
+	 background-image: url(../../assets/cardapio.png); 
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-position: center; */
+  width: 100%;
+height: 120vh;
+/* position: fixed; */
+opacity: 65%;
+top:-50px;
+z-index: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+
+
+
+
+/* imagem do fundo  */
+ .pedido {
+  /* padding: 1rem; */
+ background: white;
+ /* text-align: center; */
+ width: 480px;
+ border-radius: 10px;
+ height: 720px;
+display: flex;
+flex-direction: column;
+box-shadow:  0 0 6px 0 rgba(0, 0, 0, 0.5);
+margin-top: 15px;
+top: 70px;
+}
+.detalhe-image{
+  height: 220px;
+  width: 480px;
+  z-index: 0.2;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: right;
+ 
+}
+.image-1{
+  height: 220px;
+  width: 480px;
+  position: absolute;
+  
+}
+.icone-x{
+ position: relative;
+z-index: 1;
+}
+
+.x{
+  width: 34px;
+  padding: 5px;
+  border-radius: 50%;
+margin-top: 10px;
+
+    background-color:var(--colors)
+}
+
+.pedido-detalhe{
+height: 506px;
+width: 480px;
+padding: 16px;
+gap: 8px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+
+}
+
+.opcao{
+  width: 460px;
+  height: 58px;
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+background-color: 
+#F8F9FA;
+justify-content: center;
+  /* padding: 16px 24px; */
+}
+
+
+
+.opcao-items{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 16px; */
+  height: 72px;
+
+  width: 450px;
+}
+.opcao-items-left{
   
     
-}
-
-.tituloler{
-    display: inline-block;
-    padding: 130px  0 50px  0;
-  }
-  /* .h2{
-    margin:   0 0  5px 0;
-   
-  } */
-
-  
-  a:link {
-    text-decoration: none;
-    color: unset
-  }
-
- 
-.card-ler {
-    display: flex;
-   
-
-    margin-top: 20px;
-}
-.card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-    border-radius: 8px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 0;
+    align-items: flex-start;
 }
 
-.card img {
-    border-radius: 8px 8px 0 0;
-    width: 250px;
-    height: 200px;
+.opcao-items input{
+
+    width: 20px;
+    height: 20px;
+    color: #5F5F5F;
 }
 
 
-.teste{
-
-    padding: 0 0   10px 0  ;
-
-}
-
-.link{
+.quantidade{
   display: flex;
-  margin-top: 20px;
-
+  align-items: center;
+  width: 143px;
+  height: 32px;
+  justify-content: space-around;
+  margin-left: 150px;
+gap:10px;
 }
 
 
-.btn-editar {
-    background-color: #0275d8;
+
+.btn-adicionar {
+    background-color:#4F372F;
     color: white;
-    font-weight: bold;
+    font-weight: 500;
     /* position: fixed; */
-    bottom: 100px;
+    /* bottom: 100px; */
     /* right: 24px; */
     transition: all 0.1s linear 0.1s;
     /* width: 40%; */
-    padding: 10px 15px;
-    border-radius: 20px;
+    padding: 4px 24px;
+    border-radius: 40px;
   font-size: 18px;
+  height: 48px;
+  gap:8px;
+  width: 432px;
+  
   /* display: flex; */
   /* margin-left: 600px; */
 }
@@ -80,4 +148,21 @@
 .button:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
     transform: scale(1.1);
+}
+.FiMinus{
+  border: 2px solid 
+  #DADADA;
+background-color: 
+#DADADA;
+border-radius: 50%;
+color: 
+#5F5F5F;
+cursor: pointer;
+}
+.FiPlus{
+border: 2px solid #4F372F;
+background-color: #4F372F;
+border-radius: 50%;
+color: #F8F9FA;
+cursor: pointer;
 }
