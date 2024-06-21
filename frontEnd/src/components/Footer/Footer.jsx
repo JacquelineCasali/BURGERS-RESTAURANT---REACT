@@ -36,7 +36,7 @@ export default function Footer() {
 
                 <Link to="https://www.facebook.com/"><FaFacebook  size={30}/></Link>
                 <Link href="https://instagram.com/">
-                    <FaInstagram  size={30}/>
+                    <FaInstagram className="FaInstagram" size={30}/>
                 </Link>
                 </div>
                

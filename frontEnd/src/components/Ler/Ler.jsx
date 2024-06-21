@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import BotaoVoltar from "../Voltar/BotaoVoltar";
 import { Link, useParams } from "react-router-dom";
 import icone from "../../assets/x.png";
-import FETEST from '../../json/FETEST.json'
 import { FiMinus, FiMinusCircle, FiPlus, FiPlusCircle } from "react-icons/fi";
 import { Border } from "react-bootstrap-icons";
+import db from '../../json/db.json'
 export default function LerCard() {
 
 
@@ -49,7 +49,7 @@ const handleAddToCartClick = () => {
    
  
       <img className="image-1"
-      src={FETEST.sections[0].items[1].images[0].image}
+      src={db.sections[0].items[1].images[0].image}
        alt="" /> 
        
        </div>
@@ -59,21 +59,21 @@ const handleAddToCartClick = () => {
 <div className="pedido-detalhe">   
 
   
-<h1>{FETEST.sections[0].items[1].name}</h1>
+<h1>{db.sections[0].items[1].name}</h1>
   
 
- <p className="description">{FETEST.sections[0].items[1].description}</p>
+ <p className="description-pedido">{db.sections[0].items[1].description}</p>
 
   <div className="opcao">
-  <h2>{FETEST.sections[0].items[1].modifiers[0].name}</h2>
+  <h2>{db.sections[0].items[1].modifiers[0].name}</h2>
   <p>Select 1 option</p>
   {/* <p>{FETEST.sections[0].items[0].modifiers.name}</p> */}
  
   </div>
  
-  {FETEST.sections[0].items[1].modifiers[0].items.map((detalhe, index) => (
+  {db.sections[0].items[1].modifiers[0].items.map((detalhe, index) => (
    <div className="opcao-items" >
-   <div className="opcao-items-left" >
+   <div className="opcao-items-left" key={index} >
 
   <b>{detalhe.name}</b>
   <p>R$:{detalhe.price.toFixed(2)}</p>

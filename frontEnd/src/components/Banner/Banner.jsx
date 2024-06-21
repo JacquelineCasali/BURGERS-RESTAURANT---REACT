@@ -6,19 +6,19 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function Banner() {
-
-  const [data , setData]=useState(null)
-  const url ='https://cdn-dev.preoday.com/challenge/venue/9'
-  // rota de leitura 
-  useEffect (()=>{
-  axios.get(url)
-  .then((response)=>{
-      setData(response.data)
-  console.log(data)
-  }).catch((error)=>{
-      console.log(error)})
-  },[])
-  if(!data) return null
+//erro cors
+  // const [data , setData]=useState(null)
+  // const url ='https://cdn-dev.preoday.com/challenge/venue/9'
+  // // rota de leitura 
+  // useEffect (()=>{
+  // axios.get(url)
+  // .then((response)=>{
+  //     setData(response.data)
+  // console.log(data)
+  // }).catch((error)=>{
+  //     console.log(error)})
+  // },[])
+  // if(!data) return null
   
   
 
@@ -28,7 +28,7 @@ export default function Banner() {
     <section className="section">
          {/* <div className='container'> */}
        
-      <img className="banner" src={data.webSettings.bannerImage} alt="Foto" />
+      <img className="banner" src={Endereco[0].webSettings.bannerImage} alt="Foto" />
       
       {/* </div> */}
     </section>

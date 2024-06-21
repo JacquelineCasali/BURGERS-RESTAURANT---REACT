@@ -4,16 +4,16 @@ border-bottom: 2px solid var(--primaryColour);
 position: fixed;
 top: 0;
 width: 100%;
-height: 52px;
+height: 55px;
 display: flex;
 align-items: center;
-justify-content: space-around;
+/* justify-content: space-around; */
 /* profundidade */
 z-index: 9999;
 }
 
   
-  .a:hover {
+  .a:hover ,.b:hover {
     border-bottom: 2px solid var(--backgroundColour) ;
   }
 
@@ -26,6 +26,23 @@ z-index: 9999;
     /* color: unset */
 }
 
+.header .b{
+    color:var(--backgroundColour);
+    padding-inline: 3rem;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+  
+    margin-left: 480px;
+}
+/* .header span{
+    font-size: 2rem;
+    color:var(--backgroundColour);
+    font-weight: bold;
+    
+ /* margin-right: 650px; */
+
+/* }  */
 
 
 .hamburger {
@@ -40,31 +57,48 @@ z-index: 9999;
         font-size: 0.95rem;
         padding-inline: 0.5rem;
     }
-    .show {
-        width: 50%;
-    }
+    /* .show { */
+        /* width: 50%; */
+    /* } */
     .hamburger{
         margin-right: 10px;
     }
+    .header .b{
+         
+        margin-left:0;
+    }
 }
 
-@media (max-width: 380px) {
- 
+@media (max-width: 393px) {
+    .header  {
+
+ height: 64px;
+    }
     .header a {
         font-size: 0.75rem;
     }
+    .header .b{
+         
+        margin-left:100px;
+    }
 }
 @media screen and (max-width:768px) {
+   
+
+   
     .header {
         justify-content: space-around;
-      }
+        /* margin-left: 80px;  */
+    }
   
     .header a{
       
         color: #b71c1c;
       
     }
-    
+    header.b{
+        margin-left: 180px;
+    }
     .hamburger {
         display: flex;
         /* margin-right: 25px; */
@@ -76,22 +110,24 @@ z-index: 9999;
     }
     .show{
         display: flex;
-        width: 30%;
+        /* width: 30%; */
         height: auto;
         position: absolute;
-        top: 65px;
+        top: 54px;
         right: 0;
-        background-color: white;
+        background-color: var(--primaryColour);
         flex-direction: column;
         padding-inline: 10px;
         padding-block: 20px;
         gap: 1rem;
+        align-items: center;
       
     }
 
     @media screen and (max-width: 1200px) {
         nav {
-          margin-left: 400px;
+          /* margin-left: 400px; */
+          width: 100%;
         }
         .header {
           justify-content: space-around;

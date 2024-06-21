@@ -45,3 +45,26 @@ align-items: center;
 
   border-bottom: 2px solid var(--primaryColour) ;
 }
+
+
+@media (max-width: 393px) {
+  .menu-pedido{
+    width: 361px;
+   
+    
+  }
+  .menus{
+   
+     width: 94px;
+     margin-left: 0;
+      }
+      .menu-image{
+   
+        /* width: 64px;
+        height:  64px; */
+      
+      object-fit: cover;
+      
+      }
+   
+}

@@ -13,8 +13,11 @@ function Hearder() {
   return (
     
     <header className={styles.header}>
+
+ <Link  className={styles.b} to="/">MENU</Link>
+           {/* <Link  className={styles.b} to="/">MENU</Link> */}
       <nav className={`${styles.menuSandwich} ${menu ? styles.show : ""} `} onClick={click} >
-        <Link  className={styles.a} to="/">MENU</Link>
+   
 
           <Link className={styles.a} to={`/entrada`}>
           ENTRADA</Link>

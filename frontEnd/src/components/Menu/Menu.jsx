@@ -2,8 +2,8 @@ import "./Menu.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
+import db from '../../json/db.json'
 
-import FETEST from "../../json/FETEST.json"
 
 
 export default function Menu() {
@@ -39,8 +39,8 @@ export default function Menu() {
    <div className="menus" key="index">
       <img className="menu-image" 
       
-      src={FETEST.sections[0].images[0].image} alt="Foto" />
-      <p className="text">{FETEST.sections[0].name}</p>
+      src={db.sections[0].images[0].image} alt="Foto" />
+      <p className="text">{db.sections[0].name}</p>
       </div>
    
    {/* </a> */}
@@ -49,17 +49,17 @@ export default function Menu() {
     {/* <a href="#drinks"> */}
     <div className="menus" >
  <img className="menu-image" 
-   src={FETEST.sections[1].images[0].image} alt="Foto" />
+   src={db.sections[1].images[0].image} alt="Foto" />
 
-  <p className="text">{FETEST.sections[1].name}</p>
+  <p className="text">{db.sections[1].name}</p>
   </div>
   {/* </a> */}
   <a href="#desserts">
   <div className="menus" >
   <img className="menu-image"  
 
-  src={FETEST.sections[2].images[0].image} alt="Foto"/>
-  <p className="text">{FETEST.sections[2].name}</p>
+  src={db.sections[2].images[0].image} alt="Foto"/>
+  <p className="text">{db.sections[2].name}</p>
   </div>
   </a>
  

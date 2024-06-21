@@ -2,9 +2,9 @@ import "./Card.css";
 
 import React from "react";
 import { Link } from "react-router-dom";
-import FETEST from "../../json/FETEST.json"
-import { FiChevronUp } from "react-icons/fi";
 
+import { FiChevronUp } from "react-icons/fi";
+import db from '../../json/db.json'
 
 export default function Drink() {
 
@@ -16,10 +16,10 @@ export default function Drink() {
       
 
           <div className="menu-sections">
-            <h1>{FETEST.sections[1].name}</h1>
+            <h1>{db.sections[1].name}</h1>
             <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
           </div>
-          {FETEST.sections[1].items.map((footdata, index) => (
+          {db.sections[1].items.map((footdata, index) => (
           <Link to={`/${footdata.id}`} key={index}>
             <div className="menu-item-drink">
               <div className="menu-item-left">

@@ -1,14 +1,20 @@
 import "./Card.css";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { FiChevronUp } from "react-icons/fi";
 import Menu from "../Menu/Menu";
 import Drink from "./Drink";
 import Dessert from "./Dessert";
-import FETEST from "../../json/FETEST.json"
+import db from '../../json/db.json'
+// import db from '../../json/db.json'
 export default function Card() {
+
+
+
+
+
   // const [busca, setBusca] = useState("");
   // //corventendo para miniscula
   // const searchLowerCase = busca.toLowerCase();
@@ -22,7 +28,7 @@ export default function Card() {
   // );
 
   return (
-    <section className="container">
+    <section >
       <div className="titulo">
         {/* filtro */}
 
@@ -42,15 +48,13 @@ export default function Card() {
         <div className="left">
           <Menu />
           <div className="menu-sections">
+        
      
-
-       
-     
-            <h1>{FETEST.sections[0].name}</h1>
+            <h1 >{db.sections[0].name}</h1>
             <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
           </div>
 
-          {FETEST.sections[0].items.map((footdata, index) => (
+          {db.sections[0].items.map((footdata, index) => (
             <Link to={`/${footdata.id}`} key={index}>
               <div className="menu-item">
                 <div className="menu-item-left">

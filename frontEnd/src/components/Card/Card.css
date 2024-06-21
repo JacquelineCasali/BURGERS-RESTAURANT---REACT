@@ -33,14 +33,14 @@
   /* align-items: center; */
   padding: 3rem 1rem;
   background-color: #F8F9FA;
-  width: 1024px;
+  width: 1150px;
   gap: 24px;
   Height: 1337px;
 }
 .left{
   background-color: var(--backgroundColour);
   width: 600px;
- height:1120px ;
+ height:1150px ;
 padding: 0px 0px 24px 0px;
 box-shadow: rgba(0, 0, 0, 0.14) 0px 7px 29px 0px;
 
@@ -157,6 +157,49 @@ b{
   border-radius:4px ;
   width: 128px;
   height: 85px;
+}
+
+@media (max-width: 393px) {
+  .container{
+    padding: 0;
+    color: white;
+  }
+ 
+  .pesquisa{
+    width: 361px;
+
+  }
+  .menu,.left{
+    width: 375px;
+ padding: 0;
+ box-shadow: none;
+ margin-left: 6px;
+ height: 1337px;
+  }
+
+  .menu-item-left{
+    width: 235px;
+    /* height: 120px; */
+   
+  }
+  .description{width: 217px;}
+  .right {
+    display: none;
+    cursor: pointer;
+
+}
+.menu-item,.menu-item-drink {
+
+width: 361px;
+padding: 6px;
+
+}
+   .menu-item{
+    height: 175px;
+   }
+   .menu-sections{
+    padding:20px 16px 12px 6px;
+   }
 }
 /* .button {
     background-color: #0275d8;
