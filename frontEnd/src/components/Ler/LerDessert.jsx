@@ -6,7 +6,7 @@ import icone from "../../assets/x.png";
 import { FiMinus, FiPlus} from "react-icons/fi";
 
 
-export default function LerCard({ burger,modifiers, onSair }) {
+export default function LerDessert({ dessert,modifiers, onSair }) {
   // const handleDelete = () => {
   //   deletePlayer(player.id);
   // };
@@ -36,16 +36,16 @@ export default function LerCard({ burger,modifiers, onSair }) {
           <Link className="icone-x" onClick={onSair}>
             <img className="x" src={icone} alt="Logo" />
           </Link>
-          <img className="image-1" src={burger.images[0].image} />
+          <img className="image-1" src={dessert.images[0].image} />
         </div>
        
         <div className="pedido-detalhe">
-        <h1>{burger.name}</h1>
-          <p className="description-pedido">{burger.description}</p>
+        <h1>{dessert.name}</h1>
+          <p className="description-pedido">{dessert.description}</p>
 
           <div className="opcao">
             <h2>{modifiers.name}</h2>
-            <p >Select 1 option</p>
+            <p>Select 1 option</p>
           </div>
 
           {modifiers.items.map((detalhe, index) => (

@@ -7,7 +7,7 @@ import Footer from "../components/Footer/Footer";
 import Hearder from "../components/Hearder/Hearder";
 import Container from "../components/Container/Container";
 import Error from "../page/Error/Error";
-import Ler from "../page/Ler";
+
 import Editar from "../components/Editar/Editar";
 
 
@@ -18,7 +18,7 @@ const AppRoutes = () => {
    <Container>
     <Routes>
       <Route path="/" element={<Home />} />
-       <Route exact path="/:id" element={<Ler />} />
+   
        <Route exact path="/cadastro" element={<Cadastro />} />
        <Route exact path="/edit/:id" element={<Editar />} />
 

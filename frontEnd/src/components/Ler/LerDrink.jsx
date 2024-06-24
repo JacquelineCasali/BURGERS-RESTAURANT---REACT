@@ -1,12 +1,14 @@
 import "./Ler.css";
-
-import React, { useState } from "react";
-import { Link  } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import BotaoVoltar from "../Voltar/BotaoVoltar";
+import { Link, useParams } from "react-router-dom";
 import icone from "../../assets/x.png";
-import { FiMinus, FiPlus} from "react-icons/fi";
+import { FiMinus,FiPlus} from "react-icons/fi";
+import { Border } from "react-bootstrap-icons";
+import db from "../../data/db.json";
 
-
-export default function LerCard({ burger,modifiers, onSair }) {
+export default function LerDrink({ drink, onSair }) {
   // const handleDelete = () => {
   //   deletePlayer(player.id);
   // };
@@ -33,31 +35,17 @@ export default function LerCard({ burger,modifiers, onSair }) {
     <section className="imagem-fundo">
       <div className="pedido">
         <div className="detalhe-image">
-          <Link className="icone-x" onClick={onSair}>
+        <Link className="icone-x" onClick={onSair}>
             <img className="x" src={icone} alt="Logo" />
           </Link>
-          <img className="image-1" src={burger.images[0].image} />
+    
         </div>
        
         <div className="pedido-detalhe">
-        <h1>{burger.name}</h1>
-          <p className="description-pedido">{burger.description}</p>
-
-          <div className="opcao">
-            <h2>{modifiers.name}</h2>
-            <p >Select 1 option</p>
-          </div>
-
-          {modifiers.items.map((detalhe, index) => (
-            <div className="opcao-items">
-              <div className="opcao-items-left" key={index}>
-                <b>{detalhe.name}</b>
-                <p>R$:{detalhe.price.toFixed(2)}</p>
-              </div>
-              <input type="radio" />
-            </div>
-          ))}
-
+        <h1>{drink.name}</h1>
+          
+          <p>R$:{drink.price.toFixed(2)}</p>
+          
           <div className="quantidade">
             <FiMinus
               className="FiMinus"

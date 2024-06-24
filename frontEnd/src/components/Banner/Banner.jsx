@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Banner/Banner.css"
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
-import Endereco from "../../json/Endereco.json"
+import Endereco from "../../data/Endereco.json"
 import axios from "axios";
 import { Link } from "react-router-dom";
 

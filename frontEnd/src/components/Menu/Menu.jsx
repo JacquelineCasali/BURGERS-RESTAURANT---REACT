@@ -2,31 +2,35 @@ import "./Menu.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
-import db from '../../json/db.json'
+import db from '../../data/db.json'
 
 
 
 export default function Menu() {
 
 
+ 
 
-//   const [data , setData]=useState(null)
-//   const url ='../../json/FETEST.json'
-//   // rota de leitura 
-//   useEffect (()=>{
-//   fetch(`sections`)
-//   .then((response)=>{
-//       setData(response.data)
-//  console.log(data)
-//   }).catch((error)=>{
-//       console.log(error)})
-//   },[])
-//   if(!data) return null
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [data, setData] = useState(null);
 
-
-
-
-
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch('https://cdn-dev.preoday.com/challenge/menu',
+  //       {
+  //         // method: "GET",
+  //         headers: {
+  //           // "Content-Type": "application/json",
+  //          " Access-Control-Allow-Origin":" *"
+  //         }
+  //       }
+  //     );
+  //     const jsonData = await response.json();
+  //     setData(jsonData);
+  //     // setIsLoading(false);
+  //   };
+  //   fetchData();
+  // }, []);
   return (
     // <section className="container">
 
@@ -35,7 +39,7 @@ export default function Menu() {
      
     <section className="menu-pedido" >
    
-   {/* <a href="#burgers"> */}
+   <a href="#burgers">
    <div className="menus" key="index">
       <img className="menu-image" 
       
@@ -43,17 +47,17 @@ export default function Menu() {
       <p className="text">{db.sections[0].name}</p>
       </div>
    
-   {/* </a> */}
+   </a>
     
     {/* <div className='container'> */}
-    {/* <a href="#drinks"> */}
+    <a href="#drinks">
     <div className="menus" >
  <img className="menu-image" 
    src={db.sections[1].images[0].image} alt="Foto" />
 
   <p className="text">{db.sections[1].name}</p>
   </div>
-  {/* </a> */}
+  </a>
   <a href="#desserts">
   <div className="menus" >
   <img className="menu-image"  

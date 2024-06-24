@@ -3,7 +3,7 @@ import styles from "./Hearder.module.css";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
-function Hearder() {
+function Hearder(onSair) {
     //mostrar ou nao menu
     const [menu, setMenu] = useState(false);
     // //  mudança de menu
@@ -14,7 +14,7 @@ function Hearder() {
     
     <header className={styles.header}>
 
- <Link  className={styles.b} to="/">MENU</Link>
+ <Link  className={styles.b} onClick={onSair}>MENU</Link>
            {/* <Link  className={styles.b} to="/">MENU</Link> */}
       <nav className={`${styles.menuSandwich} ${menu ? styles.show : ""} `} onClick={click} >
    

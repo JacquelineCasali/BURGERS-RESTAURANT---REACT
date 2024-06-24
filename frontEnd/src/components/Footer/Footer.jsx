@@ -1,7 +1,7 @@
 import React from "react";
 import "../Footer/Footer.css"
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
-import Endereco from "../../json/Endereco.json"
+import Endereco from "../../data/Endereco.json"
 
 import { Link } from "react-router-dom";
 

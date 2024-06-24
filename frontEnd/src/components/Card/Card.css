@@ -33,9 +33,10 @@
   /* align-items: center; */
   padding: 3rem 1rem;
   background-color: #F8F9FA;
-  width: 1150px;
+  width: 1030px;
   gap: 24px;
   Height: 1337px;
+margin-left: 45px;
 }
 .left{
   background-color: var(--backgroundColour);
@@ -110,16 +111,34 @@ display: flex;
 justify-content: space-between;
 padding: 20px 16px 12px 16px;
   }
- 
-
-.menu-item,.menu-item-drink {
+  .menu-item,.menu-item-drink {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 16px;
     height: 127px;
+    /* border: none;
+    gap: 12px;
+    margin-bottom: 5px;
+    background-color: white; */
 }
+/* .menu-item-drink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  height: 127px;
+} */
+/* .menu-item,.menu-item-drink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    height: 127px;
+} */
 
 
 .menu-item:hover, .menu-item-drink:hover{
@@ -191,14 +210,15 @@ b{
 .menu-item,.menu-item-drink {
 
 width: 361px;
-padding: 6px;
+padding: 12px;
 
 }
    .menu-item{
     height: 175px;
+   
    }
    .menu-sections{
-    padding:20px 16px 12px 6px;
+    padding:20px 16px 12px 12px;
    }
 }
 /* .button {
