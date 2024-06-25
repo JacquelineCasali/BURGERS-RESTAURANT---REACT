@@ -9,31 +9,8 @@ import db from '../../data/db.json'
 export default function Menu() {
 
 
- 
-
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [data, setData] = useState(null);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await fetch('https://cdn-dev.preoday.com/challenge/menu',
-  //       {
-  //         // method: "GET",
-  //         headers: {
-  //           // "Content-Type": "application/json",
-  //          " Access-Control-Allow-Origin":" *"
-  //         }
-  //       }
-  //     );
-  //     const jsonData = await response.json();
-  //     setData(jsonData);
-  //     // setIsLoading(false);
-  //   };
-  //   fetchData();
-  // }, []);
   return (
-    // <section className="container">
-
+ 
      
 
      
@@ -43,7 +20,7 @@ export default function Menu() {
    <div className="menus" key="index">
       <img className="menu-image" 
       
-      src={db.sections[0].images[0].image} alt="Foto" />
+      src={db.sections[0].images[0].image.replace(/\w\.jpg/gi, 'W.jpg')} alt="Foto" />
       <p className="text">{db.sections[0].name}</p>
       </div>
    
@@ -53,7 +30,7 @@ export default function Menu() {
     <a href="#drinks">
     <div className="menus" >
  <img className="menu-image" 
-   src={db.sections[1].images[0].image} alt="Foto" />
+   src={db.sections[1].images[0].image.replace(/\w\.jpg/gi, 'W.jpg')} alt="Foto" />
 
   <p className="text">{db.sections[1].name}</p>
   </div>
@@ -62,7 +39,7 @@ export default function Menu() {
   <div className="menus" >
   <img className="menu-image"  
 
-  src={db.sections[2].images[0].image} alt="Foto"/>
+  src={db.sections[2].images[0].image.replace(/\w\.jpg/gi, 'W.jpg')} alt="Foto"/>
   <p className="text">{db.sections[2].name}</p>
   </div>
   </a>

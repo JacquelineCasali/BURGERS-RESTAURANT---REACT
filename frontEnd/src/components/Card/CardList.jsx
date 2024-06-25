@@ -1,13 +1,28 @@
 import "./Card.css";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { FiChevronUp } from "react-icons/fi";
 import Menu from "../Menu/Menu";
-import db from "../../data/db.json";
+import data from "../../data/db.json";
 import Banner from "../Banner/Banner";
 
-const CardList = ({ burgers, drink, dessert, onLer,onLerDrinks,onLerDessert }) => {
+import formatCurrency from "../../utils/formatCurrency";
+import LerCard from "../Ler/Ler";
+import AppContext from "../../context/‎AppContext";
+import CardDetalhe from "./CardDetalhe";
+import Cart from "../Cart/Cart";
+import CardDetalheDrink from "./CardDetalheDrink";
+
+const CardList = ({
+  burgers,
+  drink,
+  dessert,
+  onLer,
+  onLerDrinks,
+  onLerDessert,
+}) => {
+  // const [burgers] = useState(data.sections[0].items);
   const [busca, setBusca] = useState("");
   //   // filtro
   // //convertendo em letra minuscula
@@ -21,13 +36,12 @@ const CardList = ({ burgers, drink, dessert, onLer,onLerDrinks,onLerDessert }) =
   const desserts = dessert.filter((item) =>
     item.name.toLowerCase().includes(searchLowerCase)
   );
-
+  // const{loading,setLoading} =useContext(AppContext);
   return (
     <>
       <Banner />
       <section className="container">
         <div className="titulo">
-          {/* filtro */}
           <input
             type="texts"
             value={busca}
@@ -44,75 +58,29 @@ const CardList = ({ burgers, drink, dessert, onLer,onLerDrinks,onLerDessert }) =
           <div className="left">
             <Menu />
             <div className="menu-sections">
-              <h1>{db.sections[0].name}</h1>
+              <h1>{data.sections[0].name}</h1>
               <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
             </div>
-
-            {teste.map((footdata, index) => (
-           
-           <Link onClick={() => onLer(footdata.id)} key={index}>
-           <div
-                className="menu-item"
-              >
-                {/* <div className="menu-item"> */}
-                <div className="menu-item-left">
-                  <h2>{footdata.name}</h2>
-
-                  <p className="description">{footdata.description}</p>
-
-                  <b>R$:{footdata.price.toFixed(2)}</b>
-                </div>
-
-                <img src={footdata.images[0].image} />
-                </div>
-                </Link>
-            ))}
-
-            <div className="menu-sections">
-              <h1>{db.sections[1].name}</h1>
-              <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
-            </div>
-            {drinks.map((footdata, index) => (
-              <Link onClick={() => onLerDrinks(footdata.id)} key={index}>
-                <div className="menu-item-drink">
-                  <div className="menu-item-left">
-                    <h2>{footdata.name}</h2>
-
-                    <p>{footdata.description}</p>
-
-                    <b>R$:{footdata.price.toFixed(2)}</b>
-                  </div>
-                </div>
+            {teste.map((product) => (
+              <Link key={product.id} onClick={() => onLer(product.id)}>
+                <CardDetalhe data={product} />
               </Link>
             ))}
-            <div className="menu-sections">
-              <h1>{db.sections[2].name}</h1>
-              <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
-            </div>
-            {desserts.map((footdata, index) => (
-              <Link onClick={() => onLerDessert(footdata.id)} key={index}>
-                <div className="menu-item">
-                  <div className="menu-item-left">
-                    <h2>{footdata.name}</h2>
 
-                    <p>{footdata.description}</p>
-
-                    <b>R$:{footdata.price.toFixed(2)}</b>
-                  </div>
-                  <img src={footdata.images[0].image} />
-                </div>
+{drinks.map((product) => (
+              <Link key={product.id} onClick={() => onLerDrinks(product.id)}>
+                <CardDetalheDrink data={product} />
               </Link>
             ))}
-          </div>
 
-          <div className="right">
-            <div className="carrinho">
-              <h1>Carrinho</h1>
-            </div>
-            <div className="item">
-              <p className="item-Rg">Seu carrinho está vazio</p>
-            </div>
+{desserts.map((product) => (
+              <Link key={product.id} onClick={() => onLerDessert(product.id)}>
+                <CardDetalhe data={product} />
+              </Link>
+            ))}
+
           </div>
+          <Cart />
         </div>
       </section>
     </>

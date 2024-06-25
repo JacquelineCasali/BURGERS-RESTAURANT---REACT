@@ -1,22 +1,22 @@
 import "./Ler.css";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import BotaoVoltar from "../Voltar/BotaoVoltar";
-import { Link, useParams } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import icone from "../../assets/x.png";
 import { FiMinus,FiPlus} from "react-icons/fi";
-import { Border } from "react-bootstrap-icons";
-import db from "../../data/db.json";
+import formatCurrency from "../../utils/formatCurrency";
+import AppContext from "../../context/‎AppContext";
+
 
 export default function LerDrink({ drink, onSair }) {
-  // const handleDelete = () => {
-  //   deletePlayer(player.id);
-  // };
+  const{cartItems,setCartItems} =useContext(AppContext);
+  const handleAddCart=()=>{
 
+    setCartItems([...cartItems,drink])
+
+   
+  }
   //  quantidade
   const [quantidade, setQuantidade] = useState(1);
-  // adicionando item ao carrinho
-  // const { adicionarProdutoCarrinho } = useContext(CarrinhoContext);
 
   // quantidade
   const handleDecreaseQuantityClick = () => {
@@ -27,9 +27,7 @@ export default function LerDrink({ drink, onSair }) {
     setQuantidade((prev) => prev + 1);
   };
 
-  // const handleAddToCartClick = () => {
-  //   adicionarProdutoCarrinho({ ...product, quantidade });
-  // };
+ 
 
   return (
     <section className="imagem-fundo">
@@ -44,8 +42,9 @@ export default function LerDrink({ drink, onSair }) {
         <div className="pedido-detalhe">
         <h1>{drink.name}</h1>
           
-          <p>R$:{drink.price.toFixed(2)}</p>
-          
+          <p>{formatCurrency(drink.price, 'BRL')}</p>
+        
+      
           <div className="quantidade">
             <FiMinus
               className="FiMinus"
@@ -63,10 +62,13 @@ export default function LerDrink({ drink, onSair }) {
             />
           </div>
 
-          <button className="btn-adicionar">
-            {/* onClick={handleAddToCartClick}> */}
+          <Link  onClick={onSair}>
+          <button className="btn-adicionar"type="submit"  onClick={handleAddCart}
+         >
+               
             Add to Order .{" "}
-          </button>
+            </button>
+            </Link>
         </div>
       </div>
 

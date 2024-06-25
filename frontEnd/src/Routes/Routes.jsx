@@ -9,11 +9,13 @@ import Container from "../components/Container/Container";
 import Error from "../page/Error/Error";
 
 import Editar from "../components/Editar/Editar";
+import Provider from "../context/Provider";
 
 
 const AppRoutes = () => {
   return (
     <Router>
+  <Provider>
      <Hearder/>
    <Container>
     <Routes>
@@ -27,6 +29,7 @@ const AppRoutes = () => {
     </Routes>
     </Container>
     <Footer/>
+    </Provider>
   </Router>
   );
 };

@@ -28,7 +28,7 @@ export default function Banner() {
     <section className="section">
          {/* <div className='container'> */}
        
-      <img className="banner" src={Endereco[0].webSettings.bannerImage} alt="Foto" />
+      <img className="banner" src={Endereco[0].webSettings.bannerImage.replace(/\w\.jpg/gi, 'W.jpg')} alt="Foto" />
       
       {/* </div> */}
     </section>

@@ -1,22 +1,25 @@
 import "./Ler.css";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link  } from "react-router-dom";
 import icone from "../../assets/x.png";
 import { FiMinus, FiPlus} from "react-icons/fi";
+// import formatCurrency from "../../utils/formatCurrency";
+import Modifiers from "../Modifiers/Modifiers";
+import AppContext from "../../context/‎AppContext";
 
 
-export default function LerCard({ burger,modifiers, onSair }) {
-  // const handleDelete = () => {
-  //   deletePlayer(player.id);
-  // };
+export default function LerCard({ burger, onSair }) {
+  const{cartItems,setCartItems} =useContext(AppContext);
+  const handleAddCart=()=>{
 
-  //  quantidade
+    setCartItems([...cartItems,burger])
+
+   
+  }
+
   const [quantidade, setQuantidade] = useState(1);
-  // adicionando item ao carrinho
-  // const { adicionarProdutoCarrinho } = useContext(CarrinhoContext);
 
-  // quantidade
   const handleDecreaseQuantityClick = () => {
     setQuantidade((prev) => (prev === 1 ? prev : prev - 1));
   };
@@ -25,9 +28,6 @@ export default function LerCard({ burger,modifiers, onSair }) {
     setQuantidade((prev) => prev + 1);
   };
 
-  // const handleAddToCartClick = () => {
-  //   adicionarProdutoCarrinho({ ...product, quantidade });
-  // };
 
   return (
     <section className="imagem-fundo">
@@ -36,27 +36,14 @@ export default function LerCard({ burger,modifiers, onSair }) {
           <Link className="icone-x" onClick={onSair}>
             <img className="x" src={icone} alt="Logo" />
           </Link>
-          <img className="image-1" src={burger.images[0].image} />
+          <img className="image-1" src={burger.images[0].image.replace(/\w\.jpg/gi, 'W.jpg')} />
         </div>
        
         <div className="pedido-detalhe">
         <h1>{burger.name}</h1>
           <p className="description-pedido">{burger.description}</p>
+<Modifiers/>
 
-          <div className="opcao">
-            <h2>{modifiers.name}</h2>
-            <p >Select 1 option</p>
-          </div>
-
-          {modifiers.items.map((detalhe, index) => (
-            <div className="opcao-items">
-              <div className="opcao-items-left" key={index}>
-                <b>{detalhe.name}</b>
-                <p>R$:{detalhe.price.toFixed(2)}</p>
-              </div>
-              <input type="radio" />
-            </div>
-          ))}
 
           <div className="quantidade">
             <FiMinus
@@ -74,11 +61,15 @@ export default function LerCard({ burger,modifiers, onSair }) {
               variant="outline"
             />
           </div>
-
-          <button className="btn-adicionar">
-            {/* onClick={handleAddToCartClick}> */}
+          <Link  onClick={onSair}>
+          <button className="btn-adicionar"type="submit"  onClick={handleAddCart}
+         >
+      
+           
             Add to Order .{" "}
-          </button>
+            </button>
+            </Link>
+        
         </div>
       </div>
 

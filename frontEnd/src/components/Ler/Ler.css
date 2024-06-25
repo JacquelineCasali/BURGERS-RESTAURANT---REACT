@@ -146,7 +146,9 @@ gap:10px;
   /* display: flex; */
   /* margin-left: 600px; */
 }
-  
+  .btn-adicionar a{
+    color: #F8F9FA;
+  }
 .button:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
     transform: scale(1.1);
