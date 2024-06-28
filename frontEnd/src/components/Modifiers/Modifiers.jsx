@@ -7,6 +7,8 @@ export default function Modifiers() {
 
         modifiers
          } =useContext(AppContext);
+        
+
     return (
    <>
        <div className="opcao">
@@ -15,13 +17,13 @@ export default function Modifiers() {
           </div>
 
           {modifiers.items.map((detalhe, index) => (
-            <div className="opcao-items">
-              <div className="opcao-items-left" key={index}>
+            <div className="opcao-items" key={index}>
+              <div className="opcao-items-left" >
                 <b>{detalhe.name}</b>
                 <p>{formatCurrency(detalhe.price, 'BRL')}</p>
                
               </div>
-              <input type="radio" />
+              <input type="radio"/>
             </div>
                ))}
 </>

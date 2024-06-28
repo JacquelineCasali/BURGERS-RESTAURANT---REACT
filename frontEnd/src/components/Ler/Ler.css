@@ -143,8 +143,12 @@ gap:10px;
   gap:8px;
   width: 432px;
   
-  /* display: flex; */
+
+
   /* margin-left: 600px; */
+}
+p{
+  margin: 0;
 }
   .btn-adicionar a{
     color: #F8F9FA;

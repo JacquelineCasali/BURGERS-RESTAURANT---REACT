@@ -18,11 +18,11 @@ export default function CardDetalhe({ data }) {
     
    
                  
-    <div className="menu-item"
+    <div className="menu-item menu-item-dessert"
   >
      
      
-     <div className="menu-item-left">
+     <div className="menu-item-left menu-item-dessert-left">
      
      
         <h2>{name}</h2>

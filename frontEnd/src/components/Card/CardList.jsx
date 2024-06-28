@@ -1,18 +1,19 @@
 import "./Card.css";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
+
 import { BsSearch } from "react-icons/bs";
 import { FiChevronUp } from "react-icons/fi";
 import Menu from "../Menu/Menu";
 import data from "../../data/db.json";
 import Banner from "../Banner/Banner";
 
-import formatCurrency from "../../utils/formatCurrency";
-import LerCard from "../Ler/Ler";
-import AppContext from "../../context/‎AppContext";
 import CardDetalhe from "./CardDetalhe";
 import Cart from "../Cart/Cart";
 import CardDetalheDrink from "./CardDetalheDrink";
+import AppContext from "../../context/‎AppContext";
+import CartButton from "../CartButton/CartButton";
+
 
 const CardList = ({
   burgers,
@@ -23,6 +24,10 @@ const CardList = ({
   onLerDessert,
 }) => {
   // const [burgers] = useState(data.sections[0].items);
+
+  const { cartItems } = useContext(AppContext);
+
+ 
   const [busca, setBusca] = useState("");
   //   // filtro
   // //convertendo em letra minuscula
@@ -36,7 +41,8 @@ const CardList = ({
   const desserts = dessert.filter((item) =>
     item.name.toLowerCase().includes(searchLowerCase)
   );
-  // const{loading,setLoading} =useContext(AppContext);
+
+  
   return (
     <>
       <Banner />
@@ -55,33 +61,75 @@ const CardList = ({
         </div>
 
         <div className="menu">
+       
           <div className="left">
-            <Menu />
+      
+          <Menu />
+         
             <div className="menu-sections">
-              <h1>{data.sections[0].name}</h1>
+              <h1 id="burgers">{data.sections[0].name}</h1>
               <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
             </div>
+         
+     
             {teste.map((product) => (
-              <Link key={product.id} onClick={() => onLer(product.id)}>
-                <CardDetalhe data={product} />
+          
+            <Link key={product.id}
+           
+            onClick={() => onLer(product.id)}>
+   
+          
+          
+          
+                <CardDetalhe 
+                 
+                data={product} />
               </Link>
             ))}
+  <div className="menu-sections">
+              <h1 id="drinks">{data.sections[1].name}</h1>
+              <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
+            </div>
+         
 
 {drinks.map((product) => (
-              <Link key={product.id} onClick={() => onLerDrinks(product.id)}>
+              <Link key={product.id} 
+    
+              onClick={() => onLerDrinks(product.id)}>
                 <CardDetalheDrink data={product} />
               </Link>
             ))}
+ <div className="menu-sections">
 
+              <h1 id="desserts">{data.sections[2].name}</h1>
+              <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
+           
+            </div>
 {desserts.map((product) => (
-              <Link key={product.id} onClick={() => onLerDessert(product.id)}>
-                <CardDetalhe data={product} />
+              
+       
+              <Link key={product.id}
+      
+              onClick={() => onLerDessert(product.id)}>
+                <CardDetalhe   data={product} />
               </Link>
+           
             ))}
 
           </div>
-          <Cart />
-        </div>
+ 
+<div>
+
+
+         
+
+      
+          <Cart/>
+          
+          </div>
+          </div>
+
+     
       </section>
     </>
   );

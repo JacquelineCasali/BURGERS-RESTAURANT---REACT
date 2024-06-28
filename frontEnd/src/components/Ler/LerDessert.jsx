@@ -9,14 +9,9 @@ import Modifiers from "../Modifiers/Modifiers";
 import AppContext from "../../context/‎AppContext";
 
 
-export default function LerDessert({ dessert,modifiers, onSair }) {
+export default function LerDessert({ dessert, onSair }) {
   const{cartItems,setCartItems} =useContext(AppContext);
-  const handleAddCart=()=>{
 
-    setCartItems([...cartItems,dessert])
-
-   
-  }
   //  quantidade
   const [quantidade, setQuantidade] = useState(1);
   // adicionando item ao carrinho
@@ -30,7 +25,32 @@ export default function LerDessert({ dessert,modifiers, onSair }) {
   const handleIncreaseQuantityClick = () => {
     setQuantidade((prev) => prev + 1);
   };
-
+  const handleAddCart=()=>{
+    const produtoAdicionadoCarrinho = cartItems.some(
+        (cartProduct) => cartProduct.id === dessert.id,
+      );
+    
+      if (produtoAdicionadoCarrinho) {
+        setCartItems((prev) =>
+          prev.map((cartProduct) => {
+            if (cartProduct.id === dessert.id) {
+              return {
+                ...cartProduct,
+                quantidade: cartProduct.quantidade + dessert.quantidade,
+              };
+            }
+            return cartProduct;
+          }),
+        );
+        return;
+      }
+    
+    // se não adicionar o produto na lista do carrinho
+        setCartItems((cartItems)=>[...cartItems,dessert])
+    
+       
+      }
+    
  
   return (
     <section className="imagem-fundo">
@@ -44,9 +64,10 @@ export default function LerDessert({ dessert,modifiers, onSair }) {
        
         <div className="pedido-detalhe">
         <h1>{dessert.name}</h1>
+        <p>{formatCurrency(dessert.price, 'BRL')}</p>
           <p className="description-pedido">{dessert.description}</p>
 
-          <Modifiers/>
+        
 
           <div className="quantidade">
             <FiMinus
@@ -70,7 +91,7 @@ export default function LerDessert({ dessert,modifiers, onSair }) {
          >
       
             {/* onClick={handleAddToCartClick}> */}
-            Add to Order .{" "}
+            <p >  Add to Order {formatCurrency(dessert.price,'BRL')}</p>
             </button>
             </Link>
         </div>

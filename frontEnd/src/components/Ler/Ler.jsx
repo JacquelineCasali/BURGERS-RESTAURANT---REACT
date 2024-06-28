@@ -1,19 +1,42 @@
 import "./Ler.css";
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import { Link  } from "react-router-dom";
 import icone from "../../assets/x.png";
 import { FiMinus, FiPlus} from "react-icons/fi";
 // import formatCurrency from "../../utils/formatCurrency";
 import Modifiers from "../Modifiers/Modifiers";
 import AppContext from "../../context/‎AppContext";
+import formatCurrency from "../../utils/formatCurrency";
 
 
 export default function LerCard({ burger, onSair }) {
   const{cartItems,setCartItems} =useContext(AppContext);
-  const handleAddCart=()=>{
 
-    setCartItems([...cartItems,burger])
+// adiciona ao carrinho 
+  const handleAddCart=()=>{
+const produtoAdicionadoCarrinho = cartItems.some(
+    (cartProduct) => cartProduct.id === burger.id,
+  );
+
+  if (produtoAdicionadoCarrinho) {
+    setCartItems((prev) =>
+      prev.map((cartProduct) => {
+        if (cartProduct.id === burger.id) {
+          return {
+            ...cartProduct,
+            quantidade: cartProduct.quantidade + burger.quantidade,
+         price:burger.price *quantidade 
+          };
+        }
+        return cartProduct;
+      }),
+    );
+    return;
+  }
+;
+// se não adicionar o produto na lista do carrinho
+    setCartItems((cartItems)=>[...cartItems,burger])
 
    
   }
@@ -27,8 +50,8 @@ export default function LerCard({ burger, onSair }) {
   const handleIncreaseQuantityClick = () => {
     setQuantidade((prev) => prev + 1);
   };
-
-
+  // const valor = cartItems.reduce((acc, item) => item.price + acc, 0);  
+const valor =burger.price * quantidade 
   return (
     <section className="imagem-fundo">
       <div className="pedido">
@@ -42,6 +65,7 @@ export default function LerCard({ burger, onSair }) {
         <div className="pedido-detalhe">
         <h1>{burger.name}</h1>
           <p className="description-pedido">{burger.description}</p>
+          <p>{formatCurrency(burger.price  , 'BRL')}</p>
 <Modifiers/>
 
 
@@ -52,6 +76,10 @@ export default function LerCard({ burger, onSair }) {
               onClick={handleDecreaseQuantityClick}
               variant="outline"
             />
+{/* {
+  cartItems.length > 0 && 
+  <h1>{quantidade}</h1>
+} */}
 
             <h1>{quantidade}</h1>
             <FiPlus
@@ -62,11 +90,11 @@ export default function LerCard({ burger, onSair }) {
             />
           </div>
           <Link  onClick={onSair}>
-          <button className="btn-adicionar"type="submit"  onClick={handleAddCart}
+          <button className="btn-adicionar" onClick={handleAddCart}
          >
       
            
-            Add to Order .{" "}
+      <p >  Add to Order {formatCurrency((valor),'BRL')}</p>
             </button>
             </Link>
         

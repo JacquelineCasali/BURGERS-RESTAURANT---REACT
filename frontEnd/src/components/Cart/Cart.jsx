@@ -1,42 +1,62 @@
 import "./Cart.css";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../../context/‎AppContext";
-import CartItem from "../CartItem/CartItem";
+
 import formatCurrency from "../../utils/formatCurrency";
+import data from '../../data/db.json'
+import CartButton from "../CartButton/CartButton";
+import { FiMinus, FiPlus } from "react-icons/fi";
+import { BsCartDashFill } from "react-icons/bs";
+import CartItem from "../CartItem/CartItem";
 const Cart = () => {
-  const{cartItems} =useContext(AppContext);
- //total do carrinho
+  const { cartItems ,setCartItems,quantidade, setQuantidade} = useContext(AppContext);
+  
   const totalPrice = cartItems.reduce((acc, item) => item.price + acc, 0);
- 
+
+// const valortotal=sutotalPrice+45;
   return (
     <>
-       
-          <div className="right">
-            <div className="carrinho">
-              <h1>Carrinho</h1>
-            </div>
-            {/* <p>Seu Carrinho esta vazio</p> */}
-            
-            <div className="cart-items"> 
-            { cartItems.map((cartItem) => <CartItem key={cartItem.id} data={cartItem} />) }
+      <div className="right">
+        <div className="carrinho">
+          <CartButton />
+          <h1>Carrinho</h1>
+        </div>
 
-          </div>
-           
-          
-  
+        {cartItems.length===0 &&
+        // <div className="cart-items">
 
+        <p className="cart-vazio">Seu carrinho está vazio</p>
+        // </div>
+        }
+
+        <div className="cart-items">
+        { cartItems.map((cartItem) => <CartItem key={cartItem.id} data={cartItem}
+    />) }
+                 
+                   </div>   
+{cartItems.length>0&&(
+             
+             <>
+             <div className="subtotal">
+                <h1>SubTotal</h1>
+                <p>{formatCurrency(totalPrice, "BRL")}</p>
+              </div>
        
-    <div className="subtotal">
-    <h1>SubTotal</h1>
-    <p >{formatCurrency(totalPrice,'BRL')}</p>
-    </div>
-     
-  
-    <div className="subtotal">
- <h1>Total</h1>
- <p className="preco">{formatCurrency(totalPrice,'BRL')}</p>
- </div>
-          </div>
+              {/* <div className="subtotal">
+                <h1>Frete</h1>
+                <p>{formatCurrency(frete, "BRL")}</p>
+              </div> */}
+       
+            <div className="subtotal">
+        <h1>Total</h1>
+        <p className="preco">{formatCurrency(totalPrice, "BRL")}</p>
+      </div>  
+ </>
+
+)}     
+
+
+      </div>
     </>
   );
 };

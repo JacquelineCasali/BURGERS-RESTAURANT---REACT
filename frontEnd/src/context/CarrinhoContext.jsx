@@ -8,7 +8,7 @@ function Provider({ children }) {
    const [modifiers] = useState(
     data.sections[0].items[1].modifiers[0]
    );
-   const [quantidade, setQuantidade] = useState(1);
+ 
   const [loading,setLoading]=useState(true)
 
 
@@ -17,8 +17,8 @@ function Provider({ children }) {
     modifiers,
 loading,setLoading,
    cartItems,
-   setCartItems,
-   quantidade, setQuantidade
+   setCartItems
+
   }
 
   return (
