@@ -8,16 +8,14 @@ import CartButton from "../CartButton/CartButton";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { BsCartDashFill } from "react-icons/bs";
 import CartItem from "../CartItem/CartItem";
-const Cart = () => {
+const Cart = ({quantidade}) => {
   const { cartItems ,setCartItems} = useContext(AppContext);
   const { id, name, price } = data;
 
 
 
  const valor = cartItems.reduce((acc, item) => item.price + acc, 0);
-//  const valor = cartItems.some(
-//   (cartProduct) => cartProduct.id === burger.id,
-// );
+
 
   return (
     <>

@@ -7,6 +7,11 @@ import AppContext from "../../context/‎AppContext";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { BsCartDashFill } from "react-icons/bs";
 
+export  const calcular=(state)=> {
+  const { cartItems,setCartItems } = useContext(AppContext);
+  return state.cartItems.reduce((acc, item) => item.price + acc, 0);
+  // const valor = cartItems.reduce((acc, item) => item.price + acc, 0);
+}
 
 export default function CartItem({ data}) {
  
@@ -58,10 +63,10 @@ const handleDecreaseQuantityClick= () => {
 
 
 
-  // const handleIncreaseQuantityClick = () => {
-  //   setQuantidade((prev) => prev + 1);
+  const handleIncreaseQuantityClick = () => {
+    setQuantidade((prev) => prev + 1);
    
-  // };
+  };
 
   return (
     <div className="cart-items">
@@ -73,7 +78,7 @@ const handleDecreaseQuantityClick= () => {
    
         <h2>{name}</h2>
         {/* <p className=" cart-item-price">{formatCurrency(price, "BRL")}</p> */}
-        <p className=" cart-item-price">{formatCurrency(price, "BRL")}</p>
+        <p className=" cart-item-price">{formatCurrency(price*quantidade, "BRL")}</p>
 
    
         <BsCartDashFill

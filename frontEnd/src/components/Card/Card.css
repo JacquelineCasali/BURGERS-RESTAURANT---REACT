@@ -267,7 +267,7 @@ b {
     height: 70px;
   }
 }
-/* @media screen and (min-width: 768px) {
+ @media screen and (min-width: 768px) {
   .menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -341,4 +341,4 @@ b {
   .menu {
     margin-left: 120px;
   }
-} */
+} 
