@@ -108,7 +108,6 @@ a:link {
   box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
 }
 
-
 .menu-item-left,
 .menu-item-left-drink {
   width: 424px;
@@ -117,7 +116,6 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
- 
 }
 .description,
 b {
@@ -153,8 +151,7 @@ b {
   height: 25px;
 }
 
-
- @media (min-width: 393px) {
+@media (min-width: 375px) {
   .menu {
     display: flex;
     width: 355px;
@@ -175,8 +172,9 @@ b {
   } */
 
   .pesquisa {
-    width: 351px;
+    width: 330px;
   }
+
   .left {
     width: 355px;
     padding: 0;
@@ -202,7 +200,6 @@ b {
     width: 281px;
     padding: 12px 0 12px 12px;
     height: 190px;
-  
   }
   .menu-sections {
     padding: 20px 16px 12px 12px;
@@ -210,18 +207,17 @@ b {
   .menu-item-drink {
     height: 70px;
   }
-
-} 
+}
 @media (min-width: 480px) {
   .menu {
     display: flex;
     width: 425px;
-   
+
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
- 
+
     margin-left: 6px;
   }
 
@@ -230,21 +226,17 @@ b {
     overflow: auto;
   }
 
+  .pesquisa {
+    width: 375px;
+  }
 
-
- 
-    .pesquisa {
-      width: 375px;
-    }
- 
   .lupa {
-   
     margin: 0px 0px 0px -50px;
-    }
+  }
   .left {
     width: 370px;
     padding: 0;
- 
+
     margin-left: 6px;
     height: 1337px;
     box-shadow: rgba(0, 0, 0, 0.14) 0px 7px 29px 0px;
@@ -267,7 +259,6 @@ b {
     width: 361px;
     padding: 12px 0 12px 12px;
     height: 190px;
- 
   }
   .menu-sections {
     padding: 20px 16px 12px 12px;
@@ -275,115 +266,79 @@ b {
   .menu-item-drink {
     height: 70px;
   }
-
-} 
-  @media screen and (min-width:768px) {
- 
- 
-     .menu {
-   
-  display: grid;
+}
+/* @media screen and (min-width: 768px) {
+  .menu {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: flex-start;
     align-items: flex-start;
-   
-    width: 700px;
-    /* gap: 24px; */
-    height: 1337px;
-    
-  } 
 
+    width: 700px;
+
+    height: 1337px;
+  }
 
   .pesquisa {
     width: 710px;
   }
   .lupa {
-   
     margin: 0px 0px 0px -50px;
-    }
+  }
   .left {
     width: 400px;
     height: 1250px;
   }
-  .menu-item
-
-   {
-
+  .menu-item {
     height: 160px;
     width: 395px;
-  
   }
   .menu-item-drink {
     height: 70px;
   }
- 
+
   .menu-item img {
     width: 119px;
     height: 95px;
   }
 
-
- 
   .description,
   b {
-   
     width: 260px;
   }
-}  
+}
 
-
- @media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
   .menu {
-   
-     
-      width: 900px;
-      height: 1137px;
-      
-    } 
- 
-    .pesquisa {
-      width: 860px;
-    }
-  
-
-  .left {
- width: 600px;
- height: 1100px;
-}
-.menu-item
-
-{
-
- height: 120px;
- width: 595px;
-
-}
-
-.menu-item-left {
-  width: 595px;
-  height: 120px;
-}
-
-.description,
- b {
-   
-    width: 455px;
+    width: 900px;
+    height: 1137px;
   }
 
+  .pesquisa {
+    width: 860px;
+  }
 
-} 
-@media screen and (min-width:1200px) {
-  .menu{
-    margin-left: 120px;
-    
+  .left {
+    width: 600px;
+    height: 1100px;
+  }
+  .menu-item {
+    height: 120px;
+    width: 595px;
+  }
+
+  .menu-item-left {
+    width: 595px;
+    height: 120px;
+  }
+
+  .description,
+  b {
+    width: 455px;
+  }
 }
-
-
-
-
-
-
-
-
-
-} 
+@media screen and (min-width: 1200px) {
+  .menu {
+    margin-left: 120px;
+  }
+} */

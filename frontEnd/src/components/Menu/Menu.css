@@ -51,16 +51,16 @@ align-items: center;
 }
 
 
-@media (min-width: 393px) {
+@media (min-width: 375px) {
   .menu-pedido{
-    width: 355px;
-   
+    width: 345px;
+   justify-content: center;
     
   }
   .menus{
    
      width: 94px;
-  
+  margin: 0;
       }
       .menu-image{
    
@@ -75,7 +75,7 @@ align-items: center;
 
 @media (min-width: 480px) {
   .menu-pedido{
-    width: 361px;
+    width: 321px;
    padding:  20px 0;
     
   }
