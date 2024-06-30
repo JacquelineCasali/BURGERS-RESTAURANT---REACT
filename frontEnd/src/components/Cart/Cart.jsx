@@ -9,13 +9,19 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import { BsCartDashFill } from "react-icons/bs";
 import CartItem from "../CartItem/CartItem";
 const Cart = () => {
-  const { cartItems ,setCartItems,quantidade, setQuantidade} = useContext(AppContext);
-  
-  const totalPrice = cartItems.reduce((acc, item) => item.price + acc, 0);
+  const { cartItems ,setCartItems} = useContext(AppContext);
+  const { id, name, price } = data;
 
-// const valortotal=sutotalPrice+45;
+
+
+ const valor = cartItems.reduce((acc, item) => item.price + acc, 0);
+//  const valor = cartItems.some(
+//   (cartProduct) => cartProduct.id === burger.id,
+// );
+
   return (
     <>
+    <section>
       <div className="right">
         <div className="carrinho">
           <CartButton />
@@ -30,16 +36,24 @@ const Cart = () => {
         }
 
         <div className="cart-items">
-        { cartItems.map((cartItem) => <CartItem key={cartItem.id} data={cartItem}
-    />) }
+        { cartItems.map((cartItem) => 
+        <CartItem key={cartItem.id} data={cartItem}
+       />
+      
+      ) 
+        
+        }
                  
                    </div>   
 {cartItems.length>0&&(
              
              <>
+   
+ 
+            
              <div className="subtotal">
                 <h1>SubTotal</h1>
-                <p>{formatCurrency(totalPrice, "BRL")}</p>
+            <p className="preco">{formatCurrency((valor), "BRL")}</p>
               </div>
        
               {/* <div className="subtotal">
@@ -49,7 +63,7 @@ const Cart = () => {
        
             <div className="subtotal">
         <h1>Total</h1>
-        <p className="preco">{formatCurrency(totalPrice, "BRL")}</p>
+        <p className="preco">{formatCurrency((valor), "BRL")}</p>
       </div>  
  </>
 
@@ -57,6 +71,7 @@ const Cart = () => {
 
 
       </div>
+      </section>
     </>
   );
 };

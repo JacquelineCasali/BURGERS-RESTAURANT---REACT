@@ -26,24 +26,24 @@ export default function LerDessert({ dessert, onSair }) {
     setQuantidade((prev) => prev + 1);
   };
   const handleAddCart=()=>{
-    const produtoAdicionadoCarrinho = cartItems.some(
-        (cartProduct) => cartProduct.id === dessert.id,
-      );
+    // const produtoAdicionadoCarrinho = cartItems.some(
+    //     (cartProduct) => cartProduct.id === dessert.id,
+    //   );
     
-      if (produtoAdicionadoCarrinho) {
-        setCartItems((prev) =>
-          prev.map((cartProduct) => {
-            if (cartProduct.id === dessert.id) {
-              return {
-                ...cartProduct,
-                quantidade: cartProduct.quantidade + dessert.quantidade,
-              };
-            }
-            return cartProduct;
-          }),
-        );
-        return;
-      }
+    //   if (produtoAdicionadoCarrinho) {
+    //     setCartItems((prev) =>
+    //       prev.map((cartProduct) => {
+    //         if (cartProduct.id === dessert.id) {
+    //           return {
+    //             ...cartProduct,
+    //             quantidade: cartProduct.quantidade + dessert.quantidade,
+    //           };
+    //         }
+    //         return cartProduct;
+    //       }),
+    //     );
+    //     return;
+    //   }
     
     // se não adicionar o produto na lista do carrinho
         setCartItems((cartItems)=>[...cartItems,dessert])
@@ -51,7 +51,7 @@ export default function LerDessert({ dessert, onSair }) {
        
       }
     
- 
+ const valor=dessert.price
   return (
     <section className="imagem-fundo">
       <div className="pedido">
@@ -91,7 +91,7 @@ export default function LerDessert({ dessert, onSair }) {
          >
       
             {/* onClick={handleAddToCartClick}> */}
-            <p >  Add to Order {formatCurrency(dessert.price,'BRL')}</p>
+            <p >  Add to Order {formatCurrency(valor,'BRL')}</p>
             </button>
             </Link>
         </div>

@@ -13,7 +13,7 @@ import Cart from "../Cart/Cart";
 import CardDetalheDrink from "./CardDetalheDrink";
 import AppContext from "../../context/‎AppContext";
 import CartButton from "../CartButton/CartButton";
-
+import "../Cart/Cart.css"
 
 const CardList = ({
   burgers,
@@ -21,7 +21,7 @@ const CardList = ({
   dessert,
   onLer,
   onLerDrinks,
-  onLerDessert,
+  onLerDessert
 }) => {
   // const [burgers] = useState(data.sections[0].items);
 
@@ -118,15 +118,15 @@ const CardList = ({
 
           </div>
  
-<div>
+
 
 
          
 
       
-          <Cart/>
+          <Cart />
           
-          </div>
+     
           </div>
 
      

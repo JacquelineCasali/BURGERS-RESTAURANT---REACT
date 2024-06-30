@@ -52,7 +52,10 @@
 .cart-items-pedidos:last-child {
   border-bottom: none;
 } 
-
+.BsCartDashFill{
+cursor: pointer;
+color: #d83232;
+}
 /* .cart-item-image {
   width: 70px;
 }

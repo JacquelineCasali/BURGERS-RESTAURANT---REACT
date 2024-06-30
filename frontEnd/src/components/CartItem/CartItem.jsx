@@ -5,18 +5,47 @@ import formatCurrency from "../../utils/formatCurrency";
 import propTypes from "prop-types";
 import AppContext from "../../context/‎AppContext";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import { BsCartDashFill } from "react-icons/bs";
 
 
-export default function CartItem({ data }) {
-
-  const { id, name, price } = data;
-  const [quantidade, setQuantidade] = useState(1);
+export default function CartItem({ data}) {
+ 
+  const { id, name, price} = data;
+  // const [] = useState(1);
  
   // adicionando item ao carrinho
    const { cartItems,setCartItems } = useContext(AppContext);
 
   // quantidade
+   const [quantidade, setQuantidade] = useState(1);
  
+  //  const handleAddCart=()=>{
+  //   const produtoAdicionadoCarrinho = cartItems.some(
+  //       (cartProduct) => cartProduct.id === burger.id,
+  //     );
+    
+  //     if (produtoAdicionadoCarrinho) {
+  //       setCartItems((prev) =>
+  //         prev.map((cartProduct) => {
+  //           if (cartProduct.id === burger.id) {
+  //             return {
+  //               ...cartProduct,
+  //               quantidade: cartProduct.quantidade + burger.quantidade,
+        
+  //             };
+  //           }
+  //           return cartProduct;
+  //         }),
+  //       );
+  //       return;
+  //     }
+  //   ;
+  //   // se não adicionar o produto na lista do carrinho
+  //       setCartItems((cartItems)=>[...cartItems,burger])
+    
+       
+  //     }
+   
 
 const handleDecreaseQuantityClick= () => {
   //  menor igual a 1 remove do carrino 
@@ -27,11 +56,13 @@ const handleDecreaseQuantityClick= () => {
       setQuantidade((prev) => (prev === 1 ? prev : prev - 1));
  };
 
-  const handleIncreaseQuantityClick = () => {
-    setQuantidade((prev) => prev + 1);
+
+
+  // const handleIncreaseQuantityClick = () => {
+  //   setQuantidade((prev) => prev + 1);
    
-  };
-  const totalPrice = cartItems.reduce((acc, item) => item.price + acc, 0);
+  // };
+
   return (
     <div className="cart-items">
    <div className="cart-items-pedidos">
@@ -41,11 +72,17 @@ const handleDecreaseQuantityClick= () => {
       <div className="cart-items-pedido">
    
         <h2>{name}</h2>
-        <p className=" cart-item-price">{formatCurrency(price*quantidade, "BRL")}</p>
+        {/* <p className=" cart-item-price">{formatCurrency(price, "BRL")}</p> */}
+        <p className=" cart-item-price">{formatCurrency(price, "BRL")}</p>
 
+   
+        <BsCartDashFill
+        className="BsCartDashFill" size={20}     
+         onClick={ handleDecreaseQuantityClick }  />
+  
       </div>
      
-      <div className="cart-quantidade">
+    {/* <div className="cart-quantidade">
         <FiMinus
           className="FiPlus"
           size={26}
@@ -62,12 +99,15 @@ const handleDecreaseQuantityClick= () => {
           onClick={handleIncreaseQuantityClick}
           variant="outline"
         />
-      </div>
+      </div>  */}
  
 
       </div>
 
       
+    
+ 
+    
     </div>
   );
 }

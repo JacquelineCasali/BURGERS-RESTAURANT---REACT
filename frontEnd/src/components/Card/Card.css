@@ -35,10 +35,16 @@
   height: 1337px;
   margin-left: 45px;
 }
+
+.menu {
+  flex-grow: 1;
+  overflow: auto;
+}
+
 .left {
   background-color: var(--backgroundColour);
   width: 600px;
-  height: 1050px;
+  height: 1150px;
   padding: 0px 0px 24px 0px;
   box-shadow: rgba(0, 0, 0, 0.14) 0px 7px 29px 0px;
 
@@ -94,16 +100,14 @@ a:link {
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  height: 127px;
+  height: 77px;
   cursor: pointer;
 }
 .menu-item:hover,
 .menu-item-drink:hover {
   box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
 }
-.menu-item-drink {
-  height: 77px;
-}
+
 
 .menu-item-left,
 .menu-item-left-drink {
@@ -150,10 +154,10 @@ b {
 }
 
 
-@media (max-width: 393px) {
+ @media (min-width: 393px) {
   .menu {
     display: flex;
-    width: 375px;
+    width: 355px;
     padding: 0;
     box-shadow: none;
     margin-left: 6px;
@@ -163,22 +167,87 @@ b {
     align-content: center;
     justify-content: space-evenly;
     align-items: center;
-    height: 1850px;
+    height: 1600px;
   }
-  .container {
-    padding: 0;
-    color: white;
-  }
+  /* .menu {
+    flex-grow: 1;
+    overflow: auto;
+  } */
 
   .pesquisa {
-    width: 361px;
+    width: 351px;
   }
   .left {
-    width: 370px;
+    width: 355px;
     padding: 0;
     box-shadow: none;
     margin-left: 6px;
     height: 1337px;
+  }
+
+  .menu-item-left {
+    width: 235px;
+    height: 180px;
+  }
+  .description {
+    width: 217px;
+  }
+
+  .menu-item img {
+    width: 100px;
+    height: 85px;
+  }
+  .menu-item,
+  .menu-item-dessert {
+    width: 281px;
+    padding: 12px 0 12px 12px;
+    height: 190px;
+  
+  }
+  .menu-sections {
+    padding: 20px 16px 12px 12px;
+  }
+  .menu-item-drink {
+    height: 70px;
+  }
+
+} 
+@media (min-width: 480px) {
+  .menu {
+    display: flex;
+    width: 425px;
+   
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+ 
+    margin-left: 6px;
+  }
+
+  .menu {
+    flex-grow: 1;
+    overflow: auto;
+  }
+
+
+
+ 
+    .pesquisa {
+      width: 375px;
+    }
+ 
+  .lupa {
+   
+    margin: 0px 0px 0px -50px;
+    }
+  .left {
+    width: 370px;
+    padding: 0;
+ 
+    margin-left: 6px;
+    height: 1337px;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 7px 29px 0px;
   }
 
   .menu-item-left {
@@ -198,46 +267,123 @@ b {
     width: 361px;
     padding: 12px 0 12px 12px;
     height: 190px;
-    /* margin-right: 30px; */
+ 
   }
-
-  /* .menu-item-dessert-left{
-
-    width: 235px;
-    height: 110px;
-
-  } */
-  /* .menu-item{
-    height: 75px;
-   
-   } */
   .menu-sections {
     padding: 20px 16px 12px 12px;
   }
   .menu-item-drink {
     height: 70px;
   }
-  /* .menu-item-left-drink{
-    width: 361px;
 
-height: 40px;
-   } */
-}
-/* .button {
-    background-color: #0275d8;
-    color: white;
-    font-weight: bold;
-    bottom: 100px;
-    transition: all 0.1s linear 0.1s;
-    width: 20%;
-    padding: 7px;
-    border-radius: 20px;
-  font-size: 18px;
+} 
+  @media screen and (min-width:768px) {
  
-  margin-left: 600px;
-}
+ 
+     .menu {
+   
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: flex-start;
+    align-items: flex-start;
+   
+    width: 700px;
+    /* gap: 24px; */
+    height: 1337px;
+    
+  } 
+
+
+  .pesquisa {
+    width: 710px;
+  }
+  .lupa {
+   
+    margin: 0px 0px 0px -50px;
+    }
+  .left {
+    width: 400px;
+    height: 1250px;
+  }
+  .menu-item
+
+   {
+
+    height: 160px;
+    width: 395px;
   
-.button:hover {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
-    transform: scale(1.1);
-} */
+  }
+  .menu-item-drink {
+    height: 70px;
+  }
+ 
+  .menu-item img {
+    width: 119px;
+    height: 95px;
+  }
+
+
+ 
+  .description,
+  b {
+   
+    width: 260px;
+  }
+}  
+
+
+ @media screen and (min-width:1024px) {
+  .menu {
+   
+     
+      width: 900px;
+      height: 1137px;
+      
+    } 
+ 
+    .pesquisa {
+      width: 860px;
+    }
+  
+
+  .left {
+ width: 600px;
+ height: 1100px;
+}
+.menu-item
+
+{
+
+ height: 120px;
+ width: 595px;
+
+}
+
+.menu-item-left {
+  width: 595px;
+  height: 120px;
+}
+
+.description,
+ b {
+   
+    width: 455px;
+  }
+
+
+} 
+@media screen and (min-width:1200px) {
+  .menu{
+    margin-left: 120px;
+    
+}
+
+
+
+
+
+
+
+
+
+} 

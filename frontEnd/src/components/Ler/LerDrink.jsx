@@ -11,24 +11,24 @@ export default function LerDrink({ drink, onSair }) {
   const{cartItems,setCartItems} =useContext(AppContext);
  
   const handleAddCart=()=>{
-    const produtoAdicionadoCarrinho = cartItems.some(
-        (cartProduct) => cartProduct.id === drink.id,
-      );
+    // const produtoAdicionadoCarrinho = cartItems.some(
+    //     (cartProduct) => cartProduct.id === drink.id,
+    //   );
     
-      if (produtoAdicionadoCarrinho) {
-        setCartItems((prev) =>
-          prev.map((cartProduct) => {
-            if (cartProduct.id === drink.id) {
-              return {
-                ...cartProduct,
-                quantidade: cartProduct.quantidade + drink.quantidade,
-              };
-            }
-            return cartProduct;
-          }),
-        );
-        return;
-      }
+    //   if (produtoAdicionadoCarrinho) {
+    //     setCartItems((prev) =>
+    //       prev.map((cartProduct) => {
+    //         if (cartProduct.id === drink.id) {
+    //           return {
+    //             ...cartProduct,
+    //             quantidade: cartProduct.quantidade + drink.quantidade,
+    //           };
+    //         }
+    //         return cartProduct;
+    //       }),
+    //     );
+    //     return;
+    //   }
     
     // se não adicionar o produto na lista do carrinho
         setCartItems((cartItems)=>[...cartItems,drink])

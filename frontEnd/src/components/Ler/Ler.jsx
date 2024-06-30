@@ -11,32 +11,44 @@ import formatCurrency from "../../utils/formatCurrency";
 
 
 export default function LerCard({ burger, onSair }) {
-  const{cartItems,setCartItems} =useContext(AppContext);
+  const{cartItems,setCartItems } =useContext(AppContext);
 
 // adiciona ao carrinho 
-  const handleAddCart=()=>{
-const produtoAdicionadoCarrinho = cartItems.some(
-    (cartProduct) => cartProduct.id === burger.id,
-  );
+  function handleAddCart(){
+const newItem=burger
 
-  if (produtoAdicionadoCarrinho) {
-    setCartItems((prev) =>
-      prev.map((cartProduct) => {
-        if (cartProduct.id === burger.id) {
-          return {
-            ...cartProduct,
-            quantidade: cartProduct.quantidade + burger.quantidade,
-         price:burger.price *quantidade 
-          };
-        }
-        return cartProduct;
-      }),
-    );
-    return;
-  }
-;
+// const existItem=cartItems.some(
+//      (cartProduct) => cartProduct.id === newItem.id,
+//      );
+
+//      if(existItem){
+//       return cartItems.map(item=>{
+//         return item.id===newItem.id?{
+//           ...item,quantidade:burger.quantidade+1}:item;
+//       })
+//      }
+    // const produtoAdicionadoCarrinho = cartItems.some(
+//     (cartProduct) => cartProduct.id === burger.id,
+//   );
+
+//   if (produtoAdicionadoCarrinho) {
+//     setCartItems((prev) =>
+//       prev.map((cartProduct) => {
+//         if (cartProduct.id === burger.id) {
+//           return {
+//             ...cartProduct,
+//             quantidade: cartProduct.quantidade + burger.quantidade,
+    
+//           };
+//         }
+//         return cartProduct;
+//       }),
+//     );
+//     return;
+//   }
+// ;
 // se não adicionar o produto na lista do carrinho
-    setCartItems((cartItems)=>[...cartItems,burger])
+   return setCartItems((cartItems)=>[...cartItems,newItem])
 
    
   }
@@ -50,8 +62,11 @@ const produtoAdicionadoCarrinho = cartItems.some(
   const handleIncreaseQuantityClick = () => {
     setQuantidade((prev) => prev + 1);
   };
+
+
   // const valor = cartItems.reduce((acc, item) => item.price + acc, 0);  
 const valor =burger.price * quantidade 
+
   return (
     <section className="imagem-fundo">
       <div className="pedido">
