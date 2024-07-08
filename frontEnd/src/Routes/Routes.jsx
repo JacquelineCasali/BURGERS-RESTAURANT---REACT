@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "../page/Home";
@@ -13,10 +13,11 @@ import Provider from "../context/Provider";
 
 
 const AppRoutes = () => {
+ 
   return (
     <Router>
   <Provider>
-     <Hearder/>
+     <Hearder  />
    <Container>
     <Routes>
       <Route path="/" element={<Home />} />

@@ -151,6 +151,20 @@ b {
   height: 25px;
 }
 
+.warning{
+  height: 60px;
+  width: 250px;
+  position: absolute;
+  right: 0;
+  top: 30%;
+  background-color: rgb(210, 91, 91);
+  font-size: 1.1rem;
+  color: white;
+  font-family: cursive;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 @media (min-width: 375px) {
   .menu {
     display: flex;

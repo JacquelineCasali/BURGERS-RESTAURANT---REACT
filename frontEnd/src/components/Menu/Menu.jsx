@@ -2,7 +2,7 @@ import "./Menu.css";
 
 import React from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
-// import { Link } from "react-router-dom";
+
 import db from "../../data/db.json";
 
 export default function Menu() {

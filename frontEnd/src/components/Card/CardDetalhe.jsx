@@ -1,43 +1,21 @@
 // import "./Ler.css";
 
-import React, { useContext, useState } from "react";
+import React from "react";
 import formatCurrency from "../../utils/formatCurrency";
-import propTypes from 'prop-types';
-import { BsFillCartPlusFill } from "react-icons/bs";
-import AppContext from "../../context/‎AppContext";
+import propTypes from "prop-types";
 
 export default function CardDetalhe({ data }) {
-  
-  const {name,price,description}=data;
-  // const{cartItems,setCartItems} =useContext(AppContext);
-  // const handleAddCart=()=>{
+  const { name, price, description } = data;
 
-  //   setCartItems([...cartItems,data])
-  //     }
   return (
-    
-   
-                 
-    <div className="menu-item menu-item-dessert"
-  >
-     
-     
-     <div className="menu-item-left menu-item-dessert-left">
-     
-     
+    <div className="menu-item menu-item-dessert">
+      <div className="menu-item-left menu-item-dessert-left">
         <h2>{name}</h2>
-          <p className="description">{description}</p>
-          <b>{formatCurrency(price, 'BRL')}</b>
-    
-</div>
-<img src={data.images[0].image} />
-
-
-
-</div>
-    
-
-  
+        <p className="description">{description}</p>
+        <b>{formatCurrency(price, "BRL")}</b>
+      </div>
+      <img src={data.images[0].image} />
+    </div>
   );
 }
 CardDetalhe.propTypes = {

@@ -1,6 +1,6 @@
 import "./Card.css";
 import React, { useContext, useState } from "react";
- import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { BsSearch } from "react-icons/bs";
 import { FiChevronUp } from "react-icons/fi";
@@ -12,8 +12,8 @@ import CardDetalhe from "./CardDetalhe";
 import Cart from "../Cart/Cart";
 import CardDetalheDrink from "./CardDetalheDrink";
 import AppContext from "../../context/‎AppContext";
-import CartButton from "../CartButton/CartButton";
-import "../Cart/Cart.css"
+
+import "../Cart/Cart.css";
 
 const CardList = ({
   burgers,
@@ -21,14 +21,12 @@ const CardList = ({
   dessert,
   onLer,
   onLerDrinks,
-  onLerDessert
+  onLerDessert,
 }) => {
-  // const [burgers] = useState(data.sections[0].items);
-
-  const { cartItems } = useContext(AppContext);
-
  
+  const{cartItems,setCartItems} =useContext(AppContext);
   const [busca, setBusca] = useState("");
+
   //   // filtro
   // //convertendo em letra minuscula
   const searchLowerCase = busca.toLowerCase();
@@ -42,7 +40,22 @@ const CardList = ({
     item.name.toLowerCase().includes(searchLowerCase)
   );
 
-  
+  const handleChange = (item, d) =>{
+		let ind = -1;
+		cartItems.forEach((data, index)=>{
+			if (data.id === item.id)
+				ind = index;
+		});
+		const tempArr = cartItems;
+		tempArr[ind].visible += d;
+		
+		if (tempArr[ind].visible === 0)
+			tempArr[ind].visible = 1;
+		setCartItems([...tempArr])
+	}
+
+ 
+
   return (
     <>
       <Banner />
@@ -61,75 +74,45 @@ const CardList = ({
         </div>
 
         <div className="menu">
-       
           <div className="left">
-      
-          <Menu />
-         
+            <Menu />
+
             <div className="menu-sections">
               <h1 id="burgers">{data.sections[0].name}</h1>
               <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
             </div>
-         
-     
+
             {teste.map((product) => (
-          
-            <Link key={product.id}
-           
-            onClick={() => onLer(product.id)}>
-   
-          
-          
-          
-                <CardDetalhe 
-                 
-                data={product} />
+              <Link key={product.id} onClick={() => onLer(product.id)}>
+                <CardDetalhe data={product} />
               </Link>
             ))}
-  <div className="menu-sections">
+            <div className="menu-sections">
               <h1 id="drinks">{data.sections[1].name}</h1>
               <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
             </div>
-         
 
-{drinks.map((product) => (
-              <Link key={product.id} 
-    
-              onClick={() => onLerDrinks(product.id)}>
+            {drinks.map((product) => (
+              <Link key={product.id} onClick={() => onLerDrinks(product.id)}>
                 <CardDetalheDrink data={product} />
               </Link>
             ))}
- <div className="menu-sections">
-
+            <div className="menu-sections">
               <h1 id="desserts">{data.sections[2].name}</h1>
               <FiChevronUp size={26} cursor={"pointer"} color="#4F372F" />
-           
             </div>
-{desserts.map((product) => (
-              
-       
-              <Link key={product.id}
-      
-              onClick={() => onLerDessert(product.id)}>
-                <CardDetalhe   data={product} />
+            {desserts.map((product) => (
+              <Link key={product.id} onClick={() => onLerDessert(product.id)}>
+                <CardDetalhe data={product} />
               </Link>
-           
             ))}
-
-          </div>
- 
-
-
-
-         
-
-      
-          <Cart />
-          
-     
           </div>
 
-     
+          <Cart cartItems={cartItems}
+           setCartItems={setCartItems} 
+           handleChange={handleChange}
+          />
+        </div>
       </section>
     </>
   );
