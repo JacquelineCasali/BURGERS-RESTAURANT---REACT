@@ -333,22 +333,22 @@ b {
   }
 
   .left {
-    width: 600px;
+    width: 870px;
     height: 1100px;
   }
   .menu-item {
     height: 120px;
-    width: 595px;
+    width: 850px;
   }
 
   .menu-item-left {
-    width: 595px;
+    width: 755px;
     height: 120px;
   }
 
   .description,
   b {
-    width: 455px;
+    width: 695px;
   }
 }
 @media screen and (min-width: 1200px) {

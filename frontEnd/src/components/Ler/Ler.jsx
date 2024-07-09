@@ -4,7 +4,7 @@ import React from "react";
 import { Link  } from "react-router-dom";
 import icone from "../../assets/x.png";
 // import formatCurrency from "../../utils/formatCurrency";
-import Modifiers from "../Modifiers/Modifiers";
+
 
 import formatCurrency from "../../utils/formatCurrency";
 const Backgrobnd = {
@@ -24,7 +24,7 @@ const Backgrobnd = {
   
     const customStyles = {
       position:'fixed',
-        top: '47%',
+        top: '55%',
           left: '40%',
           backgroundColor:'#ffff',
         
@@ -33,7 +33,7 @@ const Backgrobnd = {
         width: 'auto',
     };
 
-export default function LerCard({burger, onSair,handleAddCart,handleChange }) {
+export default function LerCard({burger, onSair,handleAddCart }) {
  
   const {name,price,description}=burger;
 
@@ -56,7 +56,7 @@ export default function LerCard({burger, onSair,handleAddCart,handleChange }) {
          <p className="description-pedido">{description}</p>
                  <p>{formatCurrency(price  , 'BRL')}</p>
         
-           <Modifiers/>
+      
     
 
          <Link  onClick={onSair}>

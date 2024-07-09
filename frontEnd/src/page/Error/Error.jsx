@@ -10,7 +10,7 @@ export default function Error() {
 
   </span>
   <strong >
-          Página Não Localizada!
+          Página Em Construção!
         </strong>
        
 

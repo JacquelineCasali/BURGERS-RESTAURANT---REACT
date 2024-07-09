@@ -18,7 +18,7 @@ export default function Home() {
   const [drink] = useState(data.sections[1].items);
   const [dessert] = useState(data.sections[2].items);
 
-  const { modifiers, loading, setLoading } = useContext(AppContext);
+  const { modifiers, loading, setLoading , cartItems,setCartItems } = useContext(AppContext);
 
   const [burgersLer, setBurgersLer] = useState(null);
   const [drinkToLer, setDrinkToLer] = useState(null);
@@ -27,7 +27,7 @@ export default function Home() {
   const [showBurgers, setShowBurgers] = useState(false);
   const [showDrink, setShowDrink] = useState(false);
   const [showDessert, setShowDessert] = useState(false);
-  const{cartItems,setCartItems} =useContext(AppContext);
+  
   const [warning, setWarning] = useState(false);
   useEffect(() => {
     setLoading(false);

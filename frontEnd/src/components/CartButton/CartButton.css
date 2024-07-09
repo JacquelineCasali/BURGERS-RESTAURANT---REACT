@@ -8,8 +8,8 @@
     background: none;
     cursor: pointer;
     position: relative;
-    margin-left: 20px;
-    color: #333;
+    /* margin-left: 20px; */
+    color: white;
   }
   
   .cart-status {

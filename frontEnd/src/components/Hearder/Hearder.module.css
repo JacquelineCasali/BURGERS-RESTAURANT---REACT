@@ -7,7 +7,7 @@ width: 100%;
 height: 55px;
 display: flex;
 align-items: center;
-/* justify-content: space-around; */
+justify-content: space-around;
 /* profundidade */
 z-index: 9999;
 }
@@ -35,14 +35,7 @@ z-index: 9999;
   
     margin-left: 480px;
 }
-/* .header span{
-    font-size: 2rem;
-    color:var(--backgroundColour);
-    font-weight: bold;
-    
- /* margin-right: 650px; */
 
-/* }  */
 
 
 .hamburger {

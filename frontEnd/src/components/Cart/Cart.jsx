@@ -1,13 +1,15 @@
 import "./Cart.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 
 import formatCurrency from "../../utils/formatCurrency";
 import CartButton from "../CartButton/CartButton";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { BsCartDashFill } from "react-icons/bs";
+import AppContext from "../../context/‎AppContext";
+import { Link } from "react-router-dom";
 const Cart = ({ cartItems, setCartItems, handleChange }) => {
   const [price, setPrice] = useState(0);
-
+  const{isCartVisible } =useContext(AppContext);
   const handlePrice = () => {
     let ans = 0;
     cartItems.map((item) => (ans += item.visible * item.price));
@@ -24,12 +26,12 @@ const Cart = ({ cartItems, setCartItems, handleChange }) => {
 
   return (
     <>
-      <section>
-        <div className="right">
-          <div className="carrinho">
-            <CartButton />
-            <h1>Carrinho</h1>
-          </div>
+    <section className={`cart ${isCartVisible ? 'cart--active' : ''}`}>
+       
+       
+       
+
+     
 
           {cartItems.length === 0 && (
             <p className="cart-vazio">Seu carrinho está vazio</p>
@@ -83,9 +85,14 @@ const Cart = ({ cartItems, setCartItems, handleChange }) => {
                 <h1>Total</h1>
                 <p className="preco">{formatCurrency(price, "BRL")}</p>
               </div>
+
+<button className="btn-pagamento">
+<Link  to={`/login`}>Ir Para Pagamento</Link>
+  </button>
+
             </>
           )}
-        </div>
+
       </section>
     </>
   );
